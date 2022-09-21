@@ -1,5 +1,6 @@
-const puppeteer = require('puppeteer-core');
-const prompt = require('password-prompt');
+import puppeteer from 'puppeteer-core';
+import prompt from 'password-prompt';
+import fetch from 'node-fetch';
 
 const LMS_URL = 'https://lms.rpi.edu/';
 
@@ -51,7 +52,8 @@ const LMS_URL = 'https://lms.rpi.edu/';
     await page.waitForNavigation({ waitUntil: 'load' });
 
     // Get Duo iframe
-    const frame = (await page.frames()).find(f => f.url().includes('.duosecurity.com/'));
+    let frame;
+    while (!frame) frame = (await page.frames()).find(f => f.url().includes('.duosecurity.com/'));
     await frame.waitForNavigation();
 
     await frame.evaluate(OTP => {
@@ -75,4 +77,16 @@ const LMS_URL = 'https://lms.rpi.edu/';
     console.log('Cookies:\n', cookies);
 
     await browser.close();
+
+    // Example get request
+    const response = await fetch('https://lms.rpi.edu/learn/api/public/v3/courses', {
+        headers: {
+            cookie: cookies
+                .map(c => `${c.name}=${c.value}`)
+                .join(';')
+        }
+    });
+    const data = await response.json();
+    console.log('\nData from LMS API example:');
+    console.log(data.results.map(c => '- ' + c.name).join('\n'));
 })();
