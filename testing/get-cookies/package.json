@@ -1,0 +1,18 @@
+{
+  "name": "api-example",
+  "version": "1.0.0",
+  "description": "LMSMiror sample API getting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bowserinator",
+  "license": "MIT",
+  "dependencies": {
+    "locate-chrome": "^0.1.1",
+    "node-fetch": "^3.2.10",
+    "password-prompt": "^1.1.2",
+    "puppeteer": "^18.0.4",
+    "puppeteer-core": "^18.0.4"
+  }
+}
