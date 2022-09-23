@@ -12,7 +12,7 @@ const LMS_URL = 'https://lms.rpi.edu/';
 
     const browser = await puppeteer.launch({
         // Change this to your chrome install
-        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
         headless: false, // Set to true to avoid popup
         args: [
             '--disable-web-security',
