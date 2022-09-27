@@ -1,89 +1,26 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+  <v-app>
+    <v-app-bar color="blue" app>
+      
+      <img  id="logo" src="../assets/logo.png" alt="lms logo">
+      <a><span id="name">LMS Mirror</span></a>
+      <div id="right">
+
+        <a><span>Home</span></a>
+        <a><span>Log In</span></a>
+        <a><span>Help</span></a>
+        <a><span>Contact</span></a>
+
+      </div>
+
     </v-app-bar>
     <v-main>
       <v-container>
-        <Nuxt />
+        <Nuxt/>
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer>
+
     </v-footer>
   </v-app>
 </template>
@@ -116,3 +53,26 @@ export default {
   }
 }
 </script>
+
+<style>
+#logo {
+  height: 100%;
+
+}
+
+span {
+  margin: 3vw;
+  color: white;
+}
+
+#name {
+  margin-left: 1.5vw;
+}
+
+#right {
+  display: inline-block;
+  margin-left: 40vw;
+  
+  
+}
+</style>
