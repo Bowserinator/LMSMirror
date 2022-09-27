@@ -19,8 +19,10 @@
         <Nuxt/>
       </v-container>
     </v-main>
-    <v-footer>
-
+    <v-footer class="center">
+      <p>LMS Mirror 2022</p>
+      <span>|</span>
+      <a>An RCOS project</a>
     </v-footer>
   </v-app>
 </template>
@@ -75,4 +77,14 @@ span {
   
   
 }
+
+.center {
+  display: block;
+  text-align: center;
+}
+
+v-footer a, p, span, div{
+  display: inline;
+}
+
 </style>
