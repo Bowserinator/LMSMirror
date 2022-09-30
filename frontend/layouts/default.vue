@@ -5,7 +5,6 @@
       <img  id="logo" src="../assets/logo.png" alt="lms logo">
       <a><span id="name">LMS Mirror</span></a>
       <div id="right">
-
         <a><span>Home</span></a>
         <a><span>Log In</span></a>
         <a><span>Help</span></a>
