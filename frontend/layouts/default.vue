@@ -1,19 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="blue" app>
-      
-      <img  id="logo" src="../assets/logo.png" alt="lms logo">
-      <a><span id="name">LMS Mirror</span></a>
-      <div id="right">
-
-        <a><span>Home</span></a>
-        <a><span>Log In</span></a>
-        <a><span>Help</span></a>
-        <a><span>Contact</span></a>
-
-      </div>
-
-    </v-app-bar>
+    <Navbar/>
     <v-main>
       <v-container>
         <Nuxt/>
