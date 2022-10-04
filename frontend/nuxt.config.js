@@ -21,7 +21,6 @@ export default {
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
-        '~/assets/css/main.scss'
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -54,7 +53,8 @@ export default {
                     info: colors.teal.lighten1,
                     warning: colors.amber.base,
                     error: colors.deepOrange.accent4,
-                    success: colors.green.accent3
+                    success: colors.green.accent3,
+                    background: colors.grey.darken3
                 }
             }
         }

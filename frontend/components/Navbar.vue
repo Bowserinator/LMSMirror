@@ -37,7 +37,6 @@
                 background-color: hsl(210, 6%, 30%);
                 border: 2px solid black;
                 padding: 10px;
-                border-radius: 15px;
                 margin-right: 10px;
                 display: flex;
                 justify-content: center;
