@@ -2,15 +2,15 @@
 
   <div>
 
-    <div id="head_bar">
+    <div class="head_bar">
 
       <h2>Courses</h2>
 
     </div>
 
-    <!-- <div id="controls_bar" dense> -->
+    <!-- <div class="controls_bar" dense> -->
       <!-- <button><img src="../assets/add_icon.png" alt="lms logo" class="icon"></image></button> -->
-      <v-toolbar id="course_buttons" extension extension-height="700" >
+      <v-toolbar class="course_buttons" extension extension-height="700" >
         <v-btn><v-icon class="icon_button icon" aria-hidden="false"  x-large>mdi-menu</v-icon></v-btn>
         <v-btn><v-icon class="icon_button icon" aria-hidden="false"  x-large>mdi-plus</v-icon></v-btn>
         <!-- <v-text-field label="Search" outlined></v-text-field> -->
@@ -22,7 +22,7 @@
 
     
 
-    <div id="course_list">
+    <div class="course_list">
       <div class="course">aaaaaaaaa</div>
       <div class="course">aaaaaaaaa</div>
       <div class="course">aaaaaaaaa</div>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-  #head_bar {
+  .head_bar {
     display: flex;
     /* background-color: red; */
     width: 100%;
@@ -54,11 +54,11 @@ export default {
     margin-bottom:5vh;
   }
 
-  #head_bar h2{
+  .head_bar h2{
     margin-left: 3vw;
   }
 
-  #course_list {
+  .course_list {
     /* display: flex; */
     width: 100%;
   }
@@ -72,7 +72,7 @@ export default {
     margin: 3vw;
   }
 
-  #course_buttons {
+  .course_buttons {
     margin-left: 45px;
   }
 

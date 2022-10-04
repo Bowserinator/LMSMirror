@@ -2,9 +2,9 @@
   <v-app>
     <v-app-bar color="blue" app>
       
-      <img  id="logo" src="../assets/logo.png" alt="lms logo">
-      <a><span id="name">LMS Mirror</span></a>
-      <div id="right">
+      <img  class="logo" src="../assets/logo.png" alt="lms logo">
+      <a><span class="name">LMS Mirror</span></a>
+      <div class="right">
         <a><span>Home</span></a>
         <a><span>Log In</span></a>
         <a><span>Help</span></a>
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style>
-#logo {
+.logo {
   height: 100%;
 
 }
@@ -66,11 +66,11 @@ span {
   color: white;
 }
 
-#name {
+.name {
   margin-left: 1.5vw;
 }
 
-#right {
+.right {
   display: inline-block;
   margin-left: 40vw;
   
