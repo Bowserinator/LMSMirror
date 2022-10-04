@@ -1,47 +1,61 @@
 <template>
+    <div>
+        <div class="head_bar">
+            <h2>Courses</h2>
+        </div>
 
-  <div>
+        <!-- <div class="controls_bar" dense> -->
+        <!-- <button><img src="../assets/add_icon.png" alt="lms logo" class="icon"></image></button> -->
+        <v-toolbar class="course_buttons" extension extension-height="700">
+            <div>
+                <v-btn icon>
+                    <v-icon class="icon_button icon" aria-hidden="false" x-large>
+                        mdi-menu
+                    </v-icon>
+                </v-btn>
+                <v-btn icon>
+                    <v-icon class="icon_button icon" aria-hidden="false" x-large>
+                        mdi-plus
+                    </v-icon>
+                </v-btn>
+            </div>
+            <!-- <v-text-field label="Search" outlined></v-text-field> -->
+            <v-text-field
+                class="shrink search_bar" hide-details filled dense
+                single-line append-icon="mdi-magnify" label="Search" outlined
+            />
+            <span class="filter_text">Filter</span>
+            <v-text-field
+                class="shrink filter_bar" hide-details filled dense
+                single-line outlined
+            />
+        </v-toolbar>
+        <!-- </div> -->
 
-    <div class="head_bar">
 
-      <h2>Courses</h2>
-
-    </div>
-
-    <!-- <div class="controls_bar" dense> -->
-      <!-- <button><img src="../assets/add_icon.png" alt="lms logo" class="icon"></image></button> -->
-      <v-toolbar class="course_buttons" extension extension-height="700" >
-        <v-btn><v-icon class="icon_button icon" aria-hidden="false"  x-large>mdi-menu</v-icon></v-btn>
-        <v-btn><v-icon class="icon_button icon" aria-hidden="false"  x-large>mdi-plus</v-icon></v-btn>
-        <!-- <v-text-field label="Search" outlined></v-text-field> -->
-        <v-text-field class="shrink search_bar" hide-details filled dense single-line append-icon="mdi-magnify" label="Search" outlined></v-text-field>
-        <span class="filter_text">Filter</span>
-        <v-text-field class="shrink filter_bar" hide-details filled dense single-line outlined></v-text-field>
-      </v-toolbar>
-    <!-- </div> -->
-
-    
-
-    <div class="course_list">
-      <div class="course">aaaaaaaaa</div>
-      <div class="course">aaaaaaaaa</div>
-      <div class="course">aaaaaaaaa</div>
-    </div>
+        <div class="course_list">
+            <div class="course">
+                aaaaaaaaa
+            </div>
+            <div class="course">
+                aaaaaaaaa
+            </div>
+            <div class="course">
+                aaaaaaaaa
+            </div>
+        </div>
 
     <!-- <v-btn>Hello</v-btn> -->
-  </div>
-  
+    </div>
 </template>
-
 
 
 <script>
 
-import Header from '../components/Header.vue'
 
 export default {
-  name: 'IndexPage'
-}
+    name: 'IndexPage'
+};
 </script>
 
 <style scoped>
@@ -67,7 +81,7 @@ export default {
     display: flex;
     height: 30vh;
     /* width: 100%; */
-    background: red;
+    background: rgb(53, 35, 35);
     border: 1px solid ;
     margin: 3vw;
   }
@@ -95,12 +109,5 @@ export default {
     margin-left: 5vw;
   } */
 
-
-
-
-
-  
-  
-  
 
 </style>
