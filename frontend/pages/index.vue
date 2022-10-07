@@ -32,16 +32,47 @@
         </v-toolbar>
         <!-- </div> -->
 
+        <h2 class="term">
+            Fall 2022
+        </h2>
+
 
         <div class="course_list">
             <div class="course">
-                aaaaaaaaa
+                <div class="course_info">
+                    <div class="prof_code">
+                        <p class="course_code">2209_MATH 4100</p>
+                        <p class="prof">Brown</p>
+                    </div>
+                    <a><h1 class="course_name">Linear Algebra</h1></a>
+                    <a href="" class="more_info"><p>More info</p></a>
+                    <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                </div>
             </div>
+
             <div class="course">
-                aaaaaaaaa
+                <div class="course_info">
+                    <div class="prof_code">
+                        <p class="course_code">2209_CSCI 2200</p>
+                        <p class="prof">Goldschmidt</p>
+                    </div>
+                    <a><h1 class="course_name">Foundations of Computer Science </h1></a>
+                    <a href="" class="more_info"><p>More info</p></a>
+                    <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                </div>
             </div>
+
+
             <div class="course">
-                aaaaaaaaa
+                <div class="course_info">
+                    <div class="prof_code">
+                        <p class="course_code">2209_ITWS 2110 </p>
+                        <p class="prof">Callahan</p>
+                    </div>
+                    <a><h1 class="course_name">Web Systems Development</h1></a>
+                    <a href="" class="more_info"><p>More info</p></a>
+                    <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                </div>
             </div>
         </div>
 
@@ -79,15 +110,16 @@ export default {
 
   .course {
     display: flex;
-    height: 30vh;
+    height: 25vh;
     /* width: 100%; */
-    background: rgb(53, 35, 35);
+    background: rgb(69, 69, 69);
     border: 1px solid ;
     margin: 3vw;
   }
 
   .course_buttons {
     margin-left: 45px;
+    margin-right: 45px;
   }
 
   /* .icon_button {
@@ -108,6 +140,51 @@ export default {
   /* .filter_bar {
     margin-left: 5vw;
   } */
+  .term {
+    margin-top: 20px;
+    margin-left: 45px
+  }
+  .course_info {
+    padding: 30px;
+  }
+
+  .prof{
+    margin-left: 50px;
+  }
+
+  .course_code, .prof{
+    font-size: 20px;
+  }
+  .course_name {
+    padding-top: 10px;
+    font-size: 42px;
+    display: inline-block;
+    width: 70vw;
+  }
+
+  .prof_code {
+    display: block;
+  }
+
+  .star {
+    visibility:hidden;
+    font-size:60px;
+    cursor:pointer;
+    color: gold;
+    position: relative;
+    bottom: 36px;
+    left: 100px;
+
+  }
+.star:before {
+   content: "\2605";
+   position: absolute;
+   visibility:visible;
+  }
+.star:checked:before {
+   content: "\2606";
+   position: absolute;
+  }
 
 
 </style>
