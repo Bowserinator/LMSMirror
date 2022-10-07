@@ -1,3 +1,10 @@
-* {
+body {
+    // TODO: adjust v-main__wrap
     background-color: hsl(210, 6%, 25%);
+}
+
+// Remove extra left space in tabs (for button, which doesn't exist
+// when it's disabled)
+.v-slide-group__prev.v-slide-group__prev--disabled {
+    display: none !important;
 }
