@@ -6,7 +6,7 @@
         - fix global background color
     -->
     <div>
-        <h1>Grades</h1>
+        <h1 class="page-header">Grades</h1>
         <div class="top-bar">
             <v-tabs v-model="tab" class="tabs">
                 <v-tab>All</v-tab>
@@ -27,8 +27,11 @@
         <v-tabs-items v-model="tab" class="tab-items">
             <v-tab-item>
                 <v-container>
-                    <GradeAssignment />
-                    <GradeAssignment />
+                    <GradeAssignment name="RCOS test" type="test" :grade="[5,10]" description="This was a test" />
+                    <GradeAssignment type="quiz" :grade="[7,10]" />
+                    <GradeAssignment type="quiz" :grade="[8,10]" />
+                    <GradeAssignment type="quiz" :grade="[9,10]" />
+                    <GradeAssignment type="quiz" :grade="[6,10]" />
                     <GradeAssignment />
                 </v-container>
             </v-tab-item>
@@ -68,7 +71,7 @@ export default {
     data() {
         return {
             tab: null,
-            sortBy: ['Course Order', 'Last Activity', 'Due Date (Latest First)', 'Due Date (Oldest First)']
+            sortBy: ['Course Order', 'Last Activity', 'Due Date (Latest First)', 'Due Date (Oldest First)', 'Type']
         };
     }
 };

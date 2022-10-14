@@ -3,6 +3,16 @@ body {
     background-color: hsl(210, 6%, 25%);
 }
 
+.page-header {
+    margin-bottom: 15px;
+    font-family: serif;
+    font-size: 28pt;
+}
+
+
+
+// --- Start vuetify bug fixes ---- \\
+
 // Remove extra left space in tabs (for button, which doesn't exist
 // when it's disabled)
 .v-slide-group__prev.v-slide-group__prev--disabled {
