@@ -13,7 +13,7 @@
       </div>
 
     </v-app-bar>
-    <v-main>
+    <v-main class="mx-16">
       <v-container>
         <Nuxt/>
       </v-container>
