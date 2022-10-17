@@ -1,0 +1,13 @@
+This document acts as pre-organization for the back end. 
+The idea here is to organize ideas before they’re moved 
+into a task list to be completed in sprints. Most ideas 
+need questions answered by either front end devs or lead 
+developers to minimize time wastage.
+
+Reference LMS API
+	What needs to be grabbed
+	Functions to grab those things 
+	How does Flask work for this
+	Are we in charge of when those functions are run
+	Will there be a call from the front end / what will that look like
+	If not, are we responsible for main flow / startup
