@@ -16,14 +16,65 @@ if you're fine using beautifulSoup
 
 # This should be functions that return json files for various things
 
+import json
+import urllib.request
 
 class apiWrapper(object):
 
-    # Okay so what do I need this to do
+    def get_json_data(url):
+        # returns dict of json from url
+        response = urllib.request.urlopen(url)
+        data = response.read().decode('utf-8')
+        return json.loads(data)
 
-    print('temp')
-
-    # Function to grab
+    # OAUTH
+    class oauth():
+        pass
+    # adaptive release
+    class adaptRelease():
+        # GET
+        def getRules( courseID, contentID ):
+            pass           
+        
+    # announcements
+    # attempt receipt
+    # attendance
+    # calendar
+    # content
+    # content collection resources
+    # content file attachments
+    # content group assigments
+    # content resources
+    # content review
+    # course announcements
+    # course assesments
+    # course categories
+    # course grade attempts
+    # course grade notations
+    # course gradebook categories
+    # course grades
+    # course grading periods
+    # course group users
+    # course groups
+    # course memberships
+    # course messages
+    # course toc
+    # courses
+    # data sources
+    # discussions
+    # institutional hierarchy 
+    # institutional hierarchy administrators
+    # performance dashboard
+    # proctoring
+    # pronouns
+    # roles
+    # rubrics
+    # sessions
+    # SIS logs
+    # system
+    # terms
+    # uploads
+    # users
 
 
 if __name__ == '__main__':  # personal testing code
