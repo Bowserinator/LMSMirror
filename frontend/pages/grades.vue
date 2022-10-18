@@ -6,7 +6,9 @@
         - fix global background color
     -->
     <div>
-        <h1 class="page-header">Grades</h1>
+        <h1 class="page-header">
+            Grades
+        </h1>
         <div class="top-bar">
             <v-tabs v-model="tab" class="tabs">
                 <v-tab>All</v-tab>
@@ -28,10 +30,13 @@
             <v-tab-item>
                 <v-container>
                     <GradeAssignment name="RCOS test" type="test" :grade="[5,10]" description="This was a test" />
-                    <GradeAssignment type="quiz" :grade="[7,10]" />
+                    <GradeAssignment
+                        type="quiz" :grade="[7,10]" name="ROCS QUIZ"
+                        description="Ok this was a really long assignment description that just goes on for forever"
+                    />
                     <GradeAssignment type="quiz" :grade="[8,10]" />
                     <GradeAssignment type="quiz" :grade="[9,10]" />
-                    <GradeAssignment type="quiz" :grade="[6,10]" />
+                    <GradeAssignment type="quiz" :grade="[6,10]" :date-due="new Date(Date.now() - 100)" />
                     <GradeAssignment />
                 </v-container>
             </v-tab-item>

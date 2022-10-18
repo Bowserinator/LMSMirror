@@ -10,17 +10,43 @@
                     <a href="" class="assignment-name"><b>{{ name }}</b></a>
                     <p class="text--secondary">
                         {{ type.substring(0, 1).toUpperCase() + type.substring(1) }}
-                        &nbsp; • &nbsp;
 
-                        <!-- TODO this is herf to VIEW description!! -->
-                        <a href="">{{ description }}</a>
+                        <span v-if="description.length" class="font-italic">
+                            &nbsp; • &nbsp;
+                            {{ condensedDescription }}
+                        </span>
+
+                        <!-- Popup dialog for description -->
+                        <v-dialog
+                            v-if="description.length"
+                            v-model="dialog"
+                            width="500"
+                        >
+                            <template #activator="{ on, attrs }">
+                                <a
+                                    v-if="isLongDesc"
+                                    href="javascript:none"
+                                    v-bind="attrs"
+                                    v-on="on"
+                                >(more)</a>
+                            </template>
+
+                            <v-card>
+                                <v-card-title>
+                                    {{ name }}
+                                </v-card-title>
+                                <v-card-text>
+                                    {{ description }}
+                                </v-card-text>
+                            </v-card>
+                        </v-dialog>
                     </p>
                 </div>
             </v-col>
             <v-col cols="2">
                 <div class="col">
-                    <b class="text--secondary">Date</b>
-                    <b class="text--secondary">Graded</b> <!-- Or upcoming if not graded -->
+                    <b class="text--primary">{{ dateNote }}</b><br>
+                    <span class="text--secondary">{{ date }}</span>
                 </div>
             </v-col>
             <v-col cols="2">
@@ -41,8 +67,14 @@
 <script>
 import colors from 'vuetify/es5/util/colors';
 
+const MAX_DESCRIPTION_LENGTH = 50;
 const TYPES = ['homework', 'quiz', 'test', 'other'];
-const TYPE_COLORS = ['transparent', '#9575CD', '#FFD54F', '#B0BEC5'];
+const TYPE_COLORS = [
+    'transparent',
+    colors.amber.accent2,
+    colors.purple.accent2,
+    colors.grey.accent2
+];
 
 export default {
     props: {
@@ -52,13 +84,19 @@ export default {
         },
         description: {
             type: String,
-            default: 'No description provided'
+            default: ''
         },
         type: {
             type: String,
             default: 'homework',
             validator(value) {
                 return TYPES.includes(value);
+            }
+        },
+        dateDue: {
+            default: null,
+            validator(value) {
+                return value instanceof Date || value === null;
             }
         },
         grade: {
@@ -78,10 +116,26 @@ export default {
             if (this.grade[1] === 0)
                 return colors.grey.lighten1;
             let grade = this.grade[0] / this.grade[1];
-            if (grade <= 0.5) return colors.red.accent2;
+            if (grade < 0.6) return colors.red.accent2;
             if (grade < 0.7) return colors.orange.accent2;
-            if (grade < 0.8) return colors.yellow.accent1;
+            if (grade < 0.85) return colors.yellow.accent1;
             return colors.green.accent3;
+        },
+        dateNote() {
+            if (!this.dateDue || this.dateDue > Date.now())
+                return 'Upcoming';
+            return 'Date Graded';
+        },
+        date() {
+            return this.dateDue ? (this.dateDue.toDateString()) : '';
+        },
+        condensedDescription() {
+            return this.description.length > MAX_DESCRIPTION_LENGTH ?
+                this.description.substring(0, MAX_DESCRIPTION_LENGTH - 3) + '...' :
+                this.description;
+        },
+        isLongDesc() {
+            return this.description.length > MAX_DESCRIPTION_LENGTH;
         }
     }
 };
@@ -97,17 +151,14 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.12;
+    opacity: 0.03;
     pointer-events: none;
 }
 
 .main {
     padding: 12px;
 
-    p {
-        margin: 0;
-    }
-
+    p { margin: 0; }
     a { text-decoration: none; }
 }
 
