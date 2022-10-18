@@ -11,3 +11,12 @@ Reference LMS API
 	Are we in charge of when those functions are run
 	Will there be a call from the front end / what will that look like
 	If not, are we responsible for main flow / startup
+
+SQL ( or other ) database
+	.json is really good and simple, plus referencing the API already grabs .json
+
+Other functions (largely stretch goals)
+Grade range calculator? 
+What do I need on my final
+What are the best and worst possible grades
+ 
