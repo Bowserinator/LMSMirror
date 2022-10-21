@@ -8,19 +8,18 @@
         <v-divider class="dark my-5" color="white"></v-divider>
         <!-- <div class="controls_bar" dense> -->
         <!-- <button><img src="../assets/add_icon.png" alt="lms logo" class="icon"></image></button> -->
-        <v-toolbar class="course_buttons" extension extension-height="700">
-            <div>
-                <v-btn icon>
-                    <v-icon class="icon_button icon" aria-hidden="false" x-large>
-                        mdi-menu
-                    </v-icon>
-                </v-btn>
-                <v-btn icon>
-                    <v-icon class="icon_button icon" aria-hidden="false" x-large>
-                        mdi-plus
-                    </v-icon>
-                </v-btn>
-            </div>
+        <v-toolbar class="course_buttons px-5" extension extension-height="700">
+            <v-btn icon>
+                <v-icon class="icon_button icon" aria-hidden="false" x-large>
+                    mdi-menu
+                </v-icon>
+            </v-btn>
+            <v-btn icon>
+                <v-icon class="icon_button icon" aria-hidden="false" x-large>
+                    mdi-plus
+                </v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
             <!-- <v-text-field label="Search" outlined></v-text-field> -->
             <v-text-field
                 class="shrink search_bar" hide-details filled dense
@@ -42,34 +41,42 @@
                     <v-col cols="12">
                         <v-card dark class="py-10 px-5">
                             <div class="">
+                                <v-layout row wrap>
+                                    <v-flex sm12>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            2209_MATH 4100 
+                                        </v-card-subtitle>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            Brown
+                                        </v-card-subtitle>
+                                    </v-flex>
+                                </v-layout>
                                 <div>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        2209_MATH 4100 
-                                    </v-card-subtitle>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        Brown
-                                    </v-card-subtitle>
-                                </div>
-                                <div>
-                                    <v-row>
-                                        <v-col cols="9">
+                                    <v-layout row wrap class="mt-5">
+                                        <v-flex>
                                             <v-card-title>
-                                                <a class="display-2 white--text text-decoration-none" href="">
+                                                <a class="display-1 white--text text-decoration-none" href="">
                                                     Linear Algebra
                                                 </a>
                                             </v-card-title>
-                                        </v-col>
-                                        <v-col cols="2">
+                                        </v-flex>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-flex>
                                             <a href="" class="more_info">
-                                                <p class="ma-10 mb-0 d-block">More info</p>
+                                                <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
-                                        </v-col>
-                                        <v-col cols="1">
-                                            <div class="mr-10">
-                                                <input class="star" type="checkbox" title="bookmark page"><br/><br/>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
+                                        </v-flex>
+                                        <v-flex>
+                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <!-- <v-icon>mdi-star</v-icon> -->
+                                        </v-flex>
+                                    </v-layout>
                                 </div>
                             </div>
                         </v-card>
@@ -81,34 +88,42 @@
                     <v-col cols="12">
                         <v-card dark class="py-10 px-5">
                             <div class="">
+                                <v-layout row wrap>
+                                    <v-flex sm12>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            2209_CSCI 2200 
+                                        </v-card-subtitle>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            Goldschmidt
+                                        </v-card-subtitle>
+                                    </v-flex>
+                                </v-layout>
                                 <div>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        2209_CSCI 2200 
-                                    </v-card-subtitle>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        Goldschmidt
-                                    </v-card-subtitle>
-                                </div>
-                                <div>
-                                    <v-row>
-                                        <v-col cols="9">
+                                    <v-layout row wrap class="mt-5">
+                                        <v-flex>
                                             <v-card-title>
-                                                <a class="display-2 white--text text-decoration-none" href="">
+                                                <a class="display-1 white--text text-decoration-none" href="">
                                                     Foundations of Computer Science
                                                 </a>
                                             </v-card-title>
-                                        </v-col>
-                                        <v-col cols="2">
+                                        </v-flex>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-flex>
                                             <a href="" class="more_info">
-                                                <p class="ma-10 mb-0 d-block">More info</p>
+                                                <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
-                                        </v-col>
-                                        <v-col cols="1">
-                                            <div class="mr-10">
-                                                <input class="star" type="checkbox" title="bookmark page"><br/><br/>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
+                                        </v-flex>
+                                        <v-flex>
+                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <!-- <v-icon>mdi-star</v-icon> -->
+                                        </v-flex>
+                                    </v-layout>
                                 </div>
                             </div>
                         </v-card>
@@ -120,73 +135,89 @@
                     <v-col cols="12">
                         <v-card dark class="py-10 px-5">
                             <div class="">
+                                <v-layout row wrap>
+                                    <v-flex sm12>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            2209_COMM_4420_6420_00 
+                                        </v-card-subtitle>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            Kimball
+                                        </v-card-subtitle>
+                                    </v-flex>
+                                </v-layout>
                                 <div>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        2209_ITWS 2110 
-                                    </v-card-subtitle>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        Callahan
-                                    </v-card-subtitle>
-                                </div>
-                                <div>
-                                    <v-row>
-                                        <v-col cols="9">
+                                    <v-layout row wrap class="mt-5">
+                                        <v-flex>
                                             <v-card-title>
-                                                <a class="display-2 white--text text-decoration-none" href="">
+                                                <a class="display-1 white--text text-decoration-none" href="">
+                                                    Foundations of HCI Usability
+                                                </a>
+                                            </v-card-title>
+                                        </v-flex>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-flex>
+                                            <a href="" class="more_info">
+                                                <p class="mt-10 mb-0 d-block">More info</p>
+                                            </a>
+                                        </v-flex>
+                                        <v-flex>
+                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <!-- <v-icon>mdi-star</v-icon> -->
+                                        </v-flex>
+                                    </v-layout>
+                                </div>
+                            </div>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
+            <v-container>
+                <v-row>
+                    <v-col cols="12">
+                        <v-card dark class="py-10 px-5">
+                            <div class="">
+                                <v-layout row wrap>
+                                    <v-flex sm12>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            2209_ITWS 2110 
+                                        </v-card-subtitle>
+                                        <v-card-subtitle class="text-h5 white--text">
+                                            Callahan
+                                        </v-card-subtitle>
+                                    </v-flex>
+                                </v-layout>
+                                <div>
+                                    <v-layout row wrap class="mt-5">
+                                        <v-flex>
+                                            <v-card-title>
+                                                <a class="display-1 white--text text-decoration-none" href="">
                                                     Web Systems Development
                                                 </a>
                                             </v-card-title>
-                                        </v-col>
-                                        <v-col cols="2">
+                                        </v-flex>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-spacer></v-spacer>
+                                        <v-flex>
                                             <a href="" class="more_info">
-                                                <p class="ma-10 mb-0 d-block">More info</p>
+                                                <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
-                                        </v-col>
-                                        <v-col cols="1">
-                                            <div class="mr-10">
-                                                <input class="star" type="checkbox" title="bookmark page"><br/><br/>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
-                                </div>
-                            </div>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
-            <v-container>
-                <v-row>
-                    <v-col cols="12">
-                        <v-card dark class="py-10 px-5">
-                            <div class="">
-                                <div>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        2209_COMM_4420_6420_00 
-                                    </v-card-subtitle>
-                                    <v-card-subtitle class="text-h5 white--text">
-                                        Kimball
-                                    </v-card-subtitle>
-                                </div>
-                                <div>
-                                    <v-row>
-                                        <v-col cols="9">
-                                            <v-card-title>
-                                                <a class="display-2 white--text text-decoration-none" href="">
-                                                    FOUNDATIONS OF HCI USABILITY
-                                                </a>
-                                            </v-card-title>
-                                        </v-col>
-                                        <v-col cols="2">
-                                            <a href="" class="more_info">
-                                                <p class="ma-10 mb-0 d-block">More info</p>
-                                            </a>
-                                        </v-col>
-                                        <v-col cols="1">
-                                            <div class="mr-10">
-                                                <input class="star" type="checkbox" title="bookmark page"><br/><br/>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
+                                        </v-flex>
+                                        <v-flex>
+                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <!-- <v-icon>mdi-star</v-icon> -->
+                                        </v-flex>
+                                    </v-layout>
                                 </div>
                             </div>
                         </v-card>
@@ -220,10 +251,10 @@
   /* margin-right: 45px; */
   }
   .search_bar {
-  margin-left: 500px;
+  /* margin-left: 500px; */
   }
   .filter_text {
-  margin: 7px;
+  /* margin: 7px; */
   }
   .course_info {
   padding: 30px;
