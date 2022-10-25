@@ -229,68 +229,71 @@
     </div>
 </template>
 <script>
-  export default {
-      name: 'IndexPage'
-  };
+import Navbar from '../components/Navbar.vue'
+
+export default {
+  name: 'IndexPage'
+}
 </script>
+
 <style scoped>
-  .course_list {
-  /* display: flex; */
-  width: 100%;
-  }
-  .course {
-  display: flex;
-  height: 170px;
-  /* width: 100%; */
-  background: rgb(69, 69, 69);
-  border: 1px solid ;
-  /* margin: 45px; */
-  }
-  .course_buttons {
-  /* margin-left: 45px; */
-  /* margin-right: 45px; */
-  }
-  .search_bar {
-  /* margin-left: 500px; */
-  }
-  .filter_text {
-  /* margin: 7px; */
-  }
-  .course_info {
-  padding: 30px;
-  }
-  .prof{
-  margin-left: 50px;
-  }
-  .course_code, .prof{
-  font-size: 20px;
-  }
-  .course_name {
-  padding-top: 10px;
-  font-size: 42px;
-  display: inline-block;
-  width: 1000px;
-  overflow:visible;
-  }
-  .prof_code {
-  display: block;
-  }
-  .star {
-  visibility:hidden;
-  font-size:60px;
-  cursor:pointer;
-  color: gold;
-  /* position: relative;
-  bottom: 36px;
-  left: 100px; */
-  }
-  .star:before {
-  content: "\2605";
-  /* position: absolute; */
-  visibility:visible;
-  }
-  .star:checked:before {
-  content: "\2606";
-  /* position: absolute; */
-  }
+    .course_list {
+        /* display: flex; */
+        width: 100%;
+    }
+    .course {
+        display: flex;
+        height: 170px;
+        /* width: 100%; */
+        background: rgb(69, 69, 69);
+        border: 1px solid ;
+        /* margin: 45px; */
+    }
+    .course_buttons {
+        /* margin-left: 45px; */
+        /* margin-right: 45px; */
+    }
+    .search_bar {
+        /* margin-left: 500px; */
+    }
+    .filter_text {
+        /* margin: 7px; */
+    }
+    .course_info {
+        padding: 30px;
+    }
+    .prof{
+        margin-left: 50px;
+    }
+    .course_code, .prof{
+        font-size: 20px;
+    }
+    .course_name {
+        padding-top: 10px;
+        font-size: 42px;
+        display: inline-block;
+        width: 1000px;
+        overflow:visible;
+    }
+    .prof_code {
+    display: block;
+    }
+    .star {
+        visibility:hidden;
+        font-size:60px;
+        cursor:pointer;
+        color: gold;
+        /* position: relative;
+        bottom: 36px;
+        left: 100px; */
+    }
+    .star:before {
+        content: "\2605";
+        /* position: absolute; */
+        visibility:visible;
+    }
+    .star:checked:before {
+        content: "\2606";
+        /* position: absolute; */
+    }
 </style>

@@ -1,19 +1,7 @@
 <template>
-  <v-app>
-    <v-app-bar color="blue" app>
-      
-      <img  class="logo" src="../assets/logo.png" alt="lms logo">
-      <a><span class="name">LMS Mirror</span></a>
-      <div class="right">
-        <a><span>Home</span></a>
-        <a><span>Log In</span></a>
-        <a><span>Help</span></a>
-        <a><span>Contact</span></a>
-
-      </div>
-
-    </v-app-bar>
-    <v-main class="mx-16">
+  <v-app id="main" :style="{background: $vuetify.theme.themes.dark.background}">
+    <Navbar/>
+    <v-main>
       <v-container>
         <Nuxt/>
       </v-container>
@@ -49,8 +37,8 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
-    }
+      title: 'Vuetify.js',
+      }
   }
 }
 </script>
@@ -59,11 +47,6 @@ export default {
 .logo {
   height: 100%;
 
-}
-
-span {
-  margin: 3vw;
-  color: white;
 }
 
 .name {
