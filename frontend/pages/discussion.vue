@@ -1,21 +1,102 @@
 <template>
     <div class="content">
-        <h1>Discussion Board</h1>
+        <h1>Discussion Board: XYZ</h1>
         <v-divider class="dark my-5" color="white"></v-divider>
         <v-card class="discussion_buttons d-flex justify-space-between mb-6" extension extension-height="700">
-            <div>
-                <v-btn dark class = "pa-2">
-                    Create Thread
-                </v-btn>
-            </div>
+            <v-btn dark class = "pa-2">
+                Create Thread
+            </v-btn>
             <v-text-field
                 class="shrink search_bar pa-2" hide-details filled dense
                 single-line append-icon="mdi-magnify" label="Search" outlined
                 />
         </v-card>
+        <div>
+            <v-row>
+                <v-col>
+                    <h3>
+                        Thread
+                    </h3>
+                </v-col>
+                <v-col>
+                    <h3>
+                        Author
+                    </h3>
+                </v-col>
+                <v-col>
+                    <h3>
+                        Date
+                    </h3>
+                </v-col>
+                <v-col>
+                    <h3>
+                        Unread
+                    </h3>
+                </v-col>
+                <v-col>
+                    <h3>
+                        Total Comments
+                    </h3>
+                </v-col>
+            </v-row>
+        </div>
         <div class="discussion_board">
             <v-card dark class="py-10 px-5">
-                
+                <v-row>
+                    <v-col>
+                        <h3>
+                            [Thread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Author]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Date]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Unread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Total Comments]
+                        </h3>
+                    </v-col>
+                </v-row>
+                <v-divider></v-divider>
+                <v-row>
+                    <v-col>
+                        <h3>
+                            [Thread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Author]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Date]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Unread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Total Comments]
+                        </h3>
+                    </v-col>
+                </v-row>
             </v-card>
         </div>
     </div>
