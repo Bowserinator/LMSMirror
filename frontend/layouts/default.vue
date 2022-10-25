@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="main" :style="{background: $vuetify.theme.themes.dark.background}">
     <Navbar/>
     <v-main>
       <v-container>
@@ -35,8 +35,8 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
-    }
+      title: 'Vuetify.js',
+      }
   }
 }
 </script>
