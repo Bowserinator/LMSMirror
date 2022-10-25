@@ -69,7 +69,63 @@
                         </h3>
                     </v-col>
                 </v-row>
-                <v-divider></v-divider>
+                <v-divider class="thread_divider"></v-divider>
+                <v-row>
+                    <v-col>
+                        <h3>
+                            [Thread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Author]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Date]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Unread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Total Comments]
+                        </h3>
+                    </v-col>
+                </v-row>
+                <v-divider class="thread_divider"></v-divider>
+                <v-row>
+                    <v-col>
+                        <h3>
+                            [Thread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Author]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Date]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Unread]
+                        </h3>
+                    </v-col>
+                    <v-col>
+                        <h3>
+                            [Total Comments]
+                        </h3>
+                    </v-col>
+                </v-row>
+                <v-divider class="thread_divider"></v-divider>
                 <v-row>
                     <v-col>
                         <h3>
@@ -114,5 +170,10 @@
     .discussion_board {
         /* display: flex; */
         width: 100%;
+    }
+
+    .thread_divider {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 </style>
