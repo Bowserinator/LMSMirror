@@ -2,8 +2,8 @@
     <div class="content">
         <h1>Discussion Board: XYZ</h1>
         <v-divider class="dark my-5" color="white"></v-divider>
-        <v-card class="discussion_buttons d-flex justify-space-between mb-6" extension extension-height="700">
-            <v-btn dark class = "pa-2">
+        <v-card class="discussion_buttons d-flex justify-space-between mb-6 align-center" extension extension-height="700">
+            <v-btn :ripple="false" dark class = "ml-2 pa-2">
                 Create Thread
             </v-btn>
             <v-text-field
