@@ -1,14 +1,7 @@
 <template>
-    <!--
-        TODO:
-        - look better
-        - fonts
-        - fix global background color
-    -->
     <div>
-        <h1 class="page-header">
-            Grades
-        </h1>
+        <PageHeader text="Grades" />
+
         <div class="top-bar">
             <v-tabs v-model="tab" class="tabs">
                 <v-tab>All</v-tab>

@@ -1,11 +1,8 @@
 <template>
     <div class="content">
-        <v-card color="transparent" height="70">
-            <v-card-title class="display-1 ma-0 pa-0">
-                Courses
-            </v-card-title>
-        </v-card>
-        <v-divider class="dark my-5" color="white"></v-divider>
+        <PageHeader text="Courses" />
+
+        <v-divider class="dark my-5" color="white" />
         <!-- <div class="controls_bar" dense> -->
         <!-- <button><img src="../assets/add_icon.png" alt="lms logo" class="icon"></image></button> -->
         <v-toolbar class="course_buttons px-5" extension extension-height="700">
@@ -19,17 +16,17 @@
                     mdi-plus
                 </v-icon>
             </v-btn>
-            <v-spacer></v-spacer>
+            <v-spacer />
             <!-- <v-text-field label="Search" outlined></v-text-field> -->
             <v-text-field
                 class="shrink search_bar" hide-details filled dense
                 single-line append-icon="mdi-magnify" label="Search" outlined
-                />
+            />
             <span class="filter_text">Filter</span>
             <v-text-field
                 class="shrink filter_bar" hide-details filled dense
                 single-line outlined
-                />
+            />
         </v-toolbar>
         <!-- </div> -->
         <h2 class="my-7">
@@ -44,7 +41,7 @@
                                 <v-layout row wrap>
                                     <v-flex sm12>
                                         <v-card-subtitle class="text-h5 white--text">
-                                            2209_MATH 4100 
+                                            2209_MATH 4100
                                         </v-card-subtitle>
                                         <v-card-subtitle class="text-h5 white--text">
                                             Brown
@@ -60,20 +57,20 @@
                                                 </a>
                                             </v-card-title>
                                         </v-flex>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
                                         <v-flex>
                                             <a href="" class="more_info">
                                                 <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
                                         </v-flex>
                                         <v-flex>
-                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <input class="star" type="checkbox" title="bookmark page"><br><br>
                                             <!-- <v-icon>mdi-star</v-icon> -->
                                         </v-flex>
                                     </v-layout>
@@ -91,7 +88,7 @@
                                 <v-layout row wrap>
                                     <v-flex sm12>
                                         <v-card-subtitle class="text-h5 white--text">
-                                            2209_CSCI 2200 
+                                            2209_CSCI 2200
                                         </v-card-subtitle>
                                         <v-card-subtitle class="text-h5 white--text">
                                             Goldschmidt
@@ -107,20 +104,20 @@
                                                 </a>
                                             </v-card-title>
                                         </v-flex>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
                                         <v-flex>
                                             <a href="" class="more_info">
                                                 <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
                                         </v-flex>
                                         <v-flex>
-                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <input class="star" type="checkbox" title="bookmark page"><br><br>
                                             <!-- <v-icon>mdi-star</v-icon> -->
                                         </v-flex>
                                     </v-layout>
@@ -138,7 +135,7 @@
                                 <v-layout row wrap>
                                     <v-flex sm12>
                                         <v-card-subtitle class="text-h5 white--text">
-                                            2209_COMM_4420_6420_00 
+                                            2209_COMM_4420_6420_00
                                         </v-card-subtitle>
                                         <v-card-subtitle class="text-h5 white--text">
                                             Kimball
@@ -154,20 +151,20 @@
                                                 </a>
                                             </v-card-title>
                                         </v-flex>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
                                         <v-flex>
                                             <a href="" class="more_info">
                                                 <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
                                         </v-flex>
                                         <v-flex>
-                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <input class="star" type="checkbox" title="bookmark page"><br><br>
                                             <!-- <v-icon>mdi-star</v-icon> -->
                                         </v-flex>
                                     </v-layout>
@@ -185,7 +182,7 @@
                                 <v-layout row wrap>
                                     <v-flex sm12>
                                         <v-card-subtitle class="text-h5 white--text">
-                                            2209_ITWS 2110 
+                                            2209_ITWS 2110
                                         </v-card-subtitle>
                                         <v-card-subtitle class="text-h5 white--text">
                                             Callahan
@@ -201,20 +198,20 @@
                                                 </a>
                                             </v-card-title>
                                         </v-flex>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
-                                        <v-spacer></v-spacer>
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
+                                        <v-spacer />
                                         <v-flex>
                                             <a href="" class="more_info">
                                                 <p class="mt-10 mb-0 d-block">More info</p>
                                             </a>
                                         </v-flex>
                                         <v-flex>
-                                            <input class="star" type="checkbox" title="bookmark page"><br/><br/>
+                                            <input class="star" type="checkbox" title="bookmark page"><br><br>
                                             <!-- <v-icon>mdi-star</v-icon> -->
                                         </v-flex>
                                     </v-layout>
@@ -229,11 +226,11 @@
     </div>
 </template>
 <script>
-import Navbar from '../components/Navbar.vue'
+import Navbar from '../components/Navbar.vue';
 
 export default {
-  name: 'IndexPage'
-}
+    name: 'IndexPage'
+};
 </script>
 
 <style scoped>
