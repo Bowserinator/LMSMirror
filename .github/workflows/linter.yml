@@ -1,7 +1,7 @@
+---
 name: Super Linter
+
 on:
-  push:
-    branches-ignore: [master, main]
   pull_request:
     branches: [master, main]
 
