@@ -3,7 +3,7 @@
         <h1>Discussion Board: XYZ</h1>
         <v-divider class="dark my-5" color="white"></v-divider>
         <v-card class="discussion_buttons d-flex justify-space-between mb-6 align-center" extension extension-height="700">
-            <v-btn :ripple="false" dark class = "ml-2 pa-2">
+            <v-btn :ripple="false" dark class = "ma-2 pa-2" to="../create-discussion-post">
                 Create Thread
             </v-btn>
             <v-text-field
@@ -159,7 +159,7 @@
 </template>
 <script>
   export default {
-      name: 'IndexPage'
+      name: 'DiscussionBoard'
   };
 </script>
 <style scoped>
