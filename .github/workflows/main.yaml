@@ -1,0 +1,38 @@
+---
+#################################
+## Prettier Linting Actions ##
+#################################
+name: Lint Code Base
+
+#############################
+# Start Job on PR #
+#############################
+on:
+  pull_request:
+    branches: [master, main]
+
+###############
+# Set the Job #
+###############
+jobs:
+  build:
+    name: Prettier Linting
+    runs-on: ubuntu-latest
+
+    ##################
+    # Load all steps #
+    ##################
+    steps:
+      ##########################
+      # Checkout Code #
+      ##########################
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      ################################
+      # Run Prettier Linting #
+      ################################
+      - name: Linting
+        run: npm run linting
