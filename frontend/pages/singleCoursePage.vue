@@ -25,9 +25,9 @@
         <v-container>
             <v-layout row wrap>
 
-                <v-layout column  xs 12 sm12 lg6 class="me-2">
+                <v-flex xs12 md6 class="me-2">
                     <v-container fluid>
-                        <v-layout row xs12>
+                        <v-layout row 12>
 
                             <v-card height="300" width="100%">
 
@@ -37,29 +37,23 @@
                             </v-card>
                         </v-layout>
 
-                        <v-layout row xs12 class="mt-8">
+                        <v-layout row 12 class="mt-8">
                             <v-card height="300" width="100%">
                                 <v-card-title>
                                     To do
                                 </v-card-title> 
                             </v-card>
                         </v-layout>
-
-
                     </v-container>
+                </v-flex>
 
-
-
-                </v-layout>
-
-                <v-layout column xs12 sm12 lg6 class="ms-2">
+                <v-flex class="" width="100%" >
                     <v-card height="600">
-
-                        <v-card-title>
-                            Right
-                        </v-card-title>
+                    <v-card-title>
+                        Right
+                    </v-card-title>
                     </v-card>
-                </v-layout>
+                </v-flex>
 
 
             </v-layout>
