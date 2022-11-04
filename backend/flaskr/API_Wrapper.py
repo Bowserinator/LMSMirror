@@ -22,7 +22,7 @@ import urllib.request
 
 class apiWrapper(object):
 
-    lms_url = https://lms.rpi.edu/ultra/institution-page
+    lms_url = "https://lms.rpi.edu/ultra/institution-page"
 
     def get_json_data(url):
         # returns dict of json from url
