@@ -17,9 +17,12 @@ if you're fine using beautifulSoup
 # This should be functions that return json files for various things
 
 import json
+from sys import api_version
 import urllib.request
 
 class apiWrapper(object):
+
+    lms_url = https://lms.rpi.edu/ultra/institution-page
 
     def get_json_data(url):
         # returns dict of json from url
@@ -29,7 +32,27 @@ class apiWrapper(object):
 
     # OAUTH
     class oauth():
-        pass
+        # GET
+        def getAuthCode():
+            """
+                Requests an OAuth 2 authorization code. 
+                Use of PKCE standard is optional, but 
+                highly recommended.
+            """
+            return super().get_json_data( super().rpi_lms + "/learn/api/public/v1/oauth2/authorizationcode" )
+        def getTokenInfo():
+            """
+                Requests an OAuth 2 access token info.
+            """
+            return super().get_json_data( super.rpi_lms + "/learn/api/public/v1/oauth2/tokeninfo" )
+        # POST
+        def postAccessToken():
+            """
+                Requests an OAuth 2 access token.
+            """
+            return super().get_json_data( super().rpi_lms + "/learn/api/public/v1/oauth2/token" )
+        
+
     # adaptive release
     class adaptRelease():
         # GET
@@ -37,8 +60,26 @@ class apiWrapper(object):
             pass           
         
     # announcements
+    class annoucement():
+        # GET
+        def getAnnoucements():
+            pass
+        def getAnnoucement( id ):
+            pass
     # attempt receipt
+    class attemptReceipt():
+        # GET
+        def getReceipt():
+            pass
     # attendance
+    class attendance():
+        # GET
+        def getCourseMeetings( courseID ):
+            pass
+        # POST
+        # DELETE
+        # PATCH
+
     # calendar
     # content
     # content collection resources
