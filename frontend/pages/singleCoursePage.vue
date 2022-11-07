@@ -29,11 +29,38 @@
                     <v-container fluid>
                         <v-layout row 12>
 
-                            <v-card height="300" width="100%">
+                            <v-card height="" width="100%">
 
-                                <v-card-title>
+                                <v-card-title class="text-h5 pb-2">
                                     Announcement
-                                </v-card-title> 
+                                </v-card-title>
+
+                                <v-card-text>
+                                    <div class="text-h6 font-weight-bold text--white text--primary">
+                                        Exam 3 canceled
+                                    </div>
+                                    <v-card-subtitle class="py-2 pl-0 font-weight-light">
+                                        Posted on Wednesday, October 19, 2022 6:54:50 PM EDT
+                                    </v-card-subtitle>
+                                    <p class="text--primary font-weight-regular announcement_text overflow-hidden">Exam 3 has been canceld. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam, inventore necessitatibus quod a blanditiis?</p>
+
+                                    <div class="text-h6 font-weight-bold text--white text--primary">
+                                        Midterm Grades
+                                    </div>
+                                    <v-card-subtitle class="py-2 pl-0 font-weight-light">
+                                        Posted on Wednesday, October 19, 2022 6:54:50 PM EDT
+                                    </v-card-subtitle>
+                                    <p class="text--primary font-weight-regular announcement_text overflow-hidden">Midterm grades have been released on LMS and can be viewed under My Progress or under Grades on the main LMS page.  This grade is currently calculated using Homework Sets 1–4 and Exam 1.  The lowest homework score will be dropped at the end of the semester, but all are included in the grade calculation now. Please see the syllabus for letter grade conversions.
+
+</p>
+
+
+
+
+
+                                </v-card-text>
+
+                                
                             </v-card>
                         </v-layout>
 
@@ -72,5 +99,12 @@ export default {
 </script>
 
 <style scoped>
+    .announcement_text{
+        max-height: 3em;
+
+    }
+
+
+
 </style>
   
