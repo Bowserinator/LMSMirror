@@ -7,6 +7,8 @@ Created on Fri Nov  4 16:52:18 2022
 from urllib.request import urlopen
 import json
 
+import requests
+
 
 # Temporary code location for API_wrapper functions Preston writes
 # to avoid any git issues
@@ -21,13 +23,11 @@ def getCourseIDs(RCSID):
     url = "https://lms.rpi.edu/learn/api/public/v1/users/userName:" \
         + RCSID + "/courses"
 
-    # store the response of URL
-    response = urlopen(url)
+    page = requests.get(url)
 
-    # storing the JSON data from the response
-    data = json.loads(response.read())
+    print(page.text)
 
-    print(data)
+    # will neeed to convert to json probably
 
     # !!!!! needs to find which course IDs are current courses
 
