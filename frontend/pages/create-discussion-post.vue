@@ -6,7 +6,7 @@
             <v-text-field outlined style="max-width: 300px" label="Post Title"></v-text-field>
             <v-textarea outlined auto-grow label="Post Contents"></v-textarea>
             <div class="d-flex justify-end" extension extension-height="700">
-                <v-btn :ripple="false" dark class = "ma-2 pa-2">
+                <v-btn :ripple="false" dark class = "ma-2 pa-2" to="../discussion-board">
                     Cancel
                 </v-btn>
                 <v-btn :ripple="false" dark class = "ma-2 pa-2">

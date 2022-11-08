@@ -2,7 +2,7 @@
     <div class="content">
         <h1>Discussion Board: XYZ</h1>
         <v-divider class="dark my-5" color="white"></v-divider>
-        <v-card class="discussion_buttons d-flex justify-space-between mb-6 align-center" extension extension-height="700">
+        <v-card class="d-flex justify-space-between mb-6 align-center" extension extension-height="700">
             <v-btn :ripple="false" dark class = "ma-2 pa-2" to="../create-discussion-post">
                 Create Thread
             </v-btn>
@@ -12,7 +12,7 @@
                 />
         </v-card>
         <div>
-            <v-row>
+            <v-row class="px-0">
                 <v-col>
                     <h3>
                         Thread
@@ -41,139 +41,146 @@
             </v-row>
         </div>
         <div class="discussion_board">
-            <v-card dark class="py-10 px-5">
-                <v-row>
-                    <v-col>
-                        <h3>
-                            [Thread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Author]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Date]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Unread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Total Comments]
-                        </h3>
-                    </v-col>
-                </v-row>
-                <v-divider class="thread_divider"></v-divider>
-                <v-row>
-                    <v-col>
-                        <h3>
-                            [Thread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Author]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Date]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Unread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Total Comments]
-                        </h3>
-                    </v-col>
-                </v-row>
-                <v-divider class="thread_divider"></v-divider>
-                <v-row>
-                    <v-col>
-                        <h3>
-                            [Thread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Author]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Date]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Unread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Total Comments]
-                        </h3>
-                    </v-col>
-                </v-row>
-                <v-divider class="thread_divider"></v-divider>
-                <v-row>
-                    <v-col>
-                        <h3>
-                            [Thread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Author]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Date]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Unread]
-                        </h3>
-                    </v-col>
-                    <v-col>
-                        <h3>
-                            [Total Comments]
-                        </h3>
-                    </v-col>
-                </v-row>
+            <v-card dark class="pa-3">
+                <a href="./discussion-post">
+                    <v-row class="highlighted-thread ma-3">
+                        <v-col>
+                            <h3>
+                                [Thread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Author]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Date]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Unread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Total Comments]
+                            </h3>
+                        </v-col>
+                    </v-row>
+                </a>
+                <v-divider class="thread-divider"></v-divider>
+                <a href="./discussion-post">
+                    <v-row class="highlighted-thread ma-3">
+                        <v-col>
+                            <h3>
+                                [Thread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Author]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Date]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Unread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Total Comments]
+                            </h3>
+                        </v-col>
+                    </v-row>
+                </a>
+                <v-divider class="thread-divider"></v-divider>
+                <a href="./discussion-post">
+                    <v-row class="highlighted-thread ma-3">
+                        <v-col>
+                            <h3>
+                                [Thread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Author]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Date]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Unread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Total Comments]
+                            </h3>
+                        </v-col>
+                    </v-row>
+                </a>
+                <v-divider class="thread-divider"></v-divider>
+                <a href="./discussion-post">
+                    <v-row class="highlighted-thread ma-3">
+                        <v-col>
+                            <h3>
+                                [Thread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Author]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Date]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Unread]
+                            </h3>
+                        </v-col>
+                        <v-col>
+                            <h3>
+                                [Total Comments]
+                            </h3>
+                        </v-col>
+                    </v-row>
+                </a>
             </v-card>
         </div>
     </div>
 </template>
 <script>
-  export default {
-      name: 'DiscussionBoard'
-  };
+    export default {
+        name: 'DiscussionBoard',
+    };
 </script>
 <style scoped>
-    .discussion_buttons {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
     .discussion_board {
-        /* display: flex; */
         width: 100%;
     }
+    
+    .highlighted-thread:hover {
+        filter: brightness(65%);
+    }
 
-    .thread_divider {
-        margin-top: 50px;
-        margin-bottom: 50px;
+    a {
+        text-decoration: none; 
+        color: white; 
     }
 </style>
