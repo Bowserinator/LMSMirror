@@ -67,7 +67,7 @@
                         <v-layout row 12 class="mt-8">
                             <v-card height="300" width="100%">
                                 <v-card-title>
-                                    To do
+                                    My Tasks/ What's New
                                 </v-card-title> 
                             </v-card>
                         </v-layout>
@@ -77,8 +77,13 @@
                 <v-flex class="" width="100%" >
                     <v-card height="600">
                     <v-card-title>
-                        Right
+                        To Do
                     </v-card-title>
+                    <v-card-text>
+                        <div class="text-h6 font-weight-bold text--white text--primary">
+                            Past due
+                        </div>
+                    </v-card-text>
                     </v-card>
                 </v-flex>
 
