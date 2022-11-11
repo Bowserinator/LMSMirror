@@ -16,6 +16,21 @@ import requests
 # Grabs user's course ID's
 # !!!!! Requires that LMS is logged into already
 
+def authenticate(RCSID):
+
+    # !!!!! IT SEEMS NIKO AND I ARE WORKING ON THE EXACT SAME THING
+    # !!!!! A coversation may be in order...
+
+    # https://lms.rpi.edu
+    # /learn/api/public/v1/oauth2/authorizationcode
+    # /learn/api/public/v1/oauth2/token
+    # /learn/api/public/v1/oauth2/tokeninfo
+
+    # Bowser's Duo passer give us cookie for 24 hour log in
+    # Could be another way to do this
+
+    raise Exception("Function not finished")
+
 
 def getCourseIDs(RCSID):
 
@@ -24,6 +39,8 @@ def getCourseIDs(RCSID):
         + RCSID + "/courses"
 
     page = requests.get(url)
+
+    # may have to use flask here to authenticate after all...
 
     print(page.text)
 
