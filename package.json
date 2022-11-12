@@ -6,7 +6,9 @@
     "dev": "cd frontend && nuxt",
     "build": "cd frontend && nuxt build",
     "start": "cd frontend && nuxt start",
-    "generate": "cd frontend && nuxt generate"
+    "generate": "cd frontend && nuxt generate",
+    "pretty": "npx prettier --write .",
+    "linting": "npx prettier -c ."
   },
   "dependencies": {
     "core-js": "^3.19.3",
@@ -20,6 +22,8 @@
   "devDependencies": {
     "@hellomouse/eslint-config": "^1.1.5",
     "@nuxtjs/vuetify": "^1.12.3",
-    "eslint-plugin-vue": "^9.4.0"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.4.0",
+    "prettier": "2.7.1"
   }
 }

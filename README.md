@@ -65,6 +65,7 @@ npm run pretty
 # prettier lint check
 npm run linting
 ```
+
 ## Contributions
 1. Create a branch
 ```sh
@@ -98,4 +99,3 @@ Refer to our [Wiki](https://github.com/Bowserinator/LMSMirror/wiki)
 * [SASS Documentation](https://sass-lang.com/documentation/)
 * [Git Tutorial](https://www.atlassian.com/git/tutorials)
 * [Markdown Badges](https://dev.to/envoy_/150-badges-for-github-pnk)
-
