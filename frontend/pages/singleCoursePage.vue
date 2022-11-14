@@ -57,8 +57,41 @@
                         <v-layout row 12 class="mt-8">
                             <v-card height="300" width="100%">
                                 <v-card-title>
-                                    My Tasks/ What's New
+                                    What's New
                                 </v-card-title> 
+                                <v-expansion-panels>
+                                    <v-expansion-panel>
+                                        <v-expansion-panel-header>Gradebook</v-expansion-panel-header>
+                                        <v-expansion-panel-content>
+                                            <v-card>
+                                                <v-card-text>
+                                                    <p> <a>Exam 1</a> has been graded</p>
+                                                </v-card-text>
+                                            </v-card>
+                                        </v-expansion-panel-content>
+                                    </v-expansion-panel>
+
+                                    <v-expansion-panel>
+                                        <v-expansion-panel-header>Other new content</v-expansion-panel-header>
+                                        <v-expansion-panel-content>
+                                            <v-card>
+                                                <v-card-text>
+                                                    <p> <a>Lecture 15</a> has been posted</p>
+                                                    <p> <a>Homework 6 solution</a> has been posted</p>
+                                                    <p> <a>Lab 6</a> has been posted</p>
+                                                    <p> <a>Exam 2 solution</a> has been posted</p>
+                                                    <p> <a>Homework 7</a> due 11/27/2022</p>
+                                                </v-card-text>
+                                            </v-card>
+                                        </v-expansion-panel-content>
+                                    </v-expansion-panel>
+
+
+
+
+
+
+                                </v-expansion-panels>
                             </v-card>
                         </v-layout>
                     </v-container>
