@@ -47,11 +47,6 @@ export default {
 
 }
 
-span {
-  margin: 3vw;
-  color: white;
-}
-
 #name {
   margin-left: 1.5vw;
 }
