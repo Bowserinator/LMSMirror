@@ -1,8 +1,15 @@
 <template>
     <div>
-        <p class="text">test</p>
-        asdasd
+        <div
+            v-ripple
+            class="text-center elevation-2 pa-12 text-h5"
+        >
+            HTML element with ripple
+        </div>
+        <div>Why does this not work?</div>
     </div>
+    
+  
 </template>
   
 <script>

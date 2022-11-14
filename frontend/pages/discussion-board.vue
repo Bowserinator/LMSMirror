@@ -132,35 +132,38 @@
                     </v-row>
                 </a>
                 <v-divider class="thread-divider"></v-divider>
-                <a href="./discussion-post">
-                    <v-row class="highlighted-thread ma-3">
-                        <v-col>
-                            <h3>
-                                [Thread]
-                            </h3>
-                        </v-col>
-                        <v-col>
-                            <h3>
-                                [Author]
-                            </h3>
-                        </v-col>
-                        <v-col>
-                            <h3>
-                                [Date]
-                            </h3>
-                        </v-col>
-                        <v-col>
-                            <h3>
-                                [Unread]
-                            </h3>
-                        </v-col>
-                        <v-col>
-                            <h3>
-                                [Total Comments]
-                            </h3>
-                        </v-col>
-                    </v-row>
-                </a>
+                <div v-ripple>
+                    <a href="./discussion-post">
+                        <v-row class="highlighted-thread ma-3">
+                            <v-col>
+                                <h3>
+                                    [Thread]
+                                </h3>
+                            </v-col>
+                            <v-col>
+                                <h3>
+                                    [Author]
+                                </h3>
+                            </v-col>
+                            <v-col>
+                                <h3>
+                                    [Date]
+                                </h3>
+                            </v-col>
+                            <v-col>
+                                <h3>
+                                    [Unread]
+                                </h3>
+                            </v-col>
+                            <v-col>
+                                <h3>
+                                    [Total Comments]
+                                </h3>
+                            </v-col>
+                        </v-row>
+                    </a>
+                </div>
+                
             </v-card>
         </div>
     </div>
