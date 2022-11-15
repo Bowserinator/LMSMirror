@@ -10,6 +10,18 @@
         </ol>
         </FileContent>
 
+        <MultiFileContent title="test">
+            Attached files:
+
+        <ol>
+            <li><a>Test.pdf</a></li>
+        </ol>
+        </MultiFileContent>
+        
+        <LinkContent title="website">
+        Hmm</LinkContent>
+
+
         <AnnouncementContent>
             <p>Homework information, including files and due dates, will be posted here. 
 Your submission will only be accepted via Gradescope.
@@ -24,18 +36,38 @@ It is strictly forbidden to look for old solutions of recycled problems and copy
 </p>
         </AnnouncementContent>
 
+        <FolderContent title="Folder">
+            asdad
+        </FolderContent>
+
+        <QuizContent title="Quiz">
+            asdada
+        </QuizContent>
+
+        <VideoContent title="Video">
+            asdada
+        </VideoContent>
+
+        <PDFContent title="Video">
+            asdada
+        </PDFContent>
+
+        <ImageContent title="cool"></ImageContent>
+
         <p>Folder thing</p>
 
         <pre>
-TODO:
+Done:
 -announcement
-- pdf
 - single file
 - attached files (multiple)
-- folder
 - external link
+- folder
 - quiz
 - video??
+- pdf
+- image
+
         </pre>
     </div>
 </template>
@@ -43,11 +75,22 @@ TODO:
 
 <script>
 import FileContent from '../components/content/FileContent.vue';
+import MultiFileContent from '../components/content/MultiFileContent.vue';
 import AnnouncementContent from '../components/content/AnnouncementContent.vue';
+import LinkContent from '../components/content/LinkContent.vue';
+import FolderContent from '../components/content/FolderContent.vue';
+import QuizContent from '../components/content/QuizContent.vue';
+import VideoContent from '../components/content/VideoContent.vue';
+import PDFContent from '../components/content/PDFContent.vue';
+import ImageContent from '../components/content/ImageContent.vue';
 
 export default {
     name: 'CourseContentPage',
-    components: { FileContent, AnnouncementContent }
+    components: {
+        FileContent, AnnouncementContent, MultiFileContent,
+        LinkContent, FolderContent, QuizContent, VideoContent,
+        PDFContent, ImageContent
+    }
 };
 </script>
 

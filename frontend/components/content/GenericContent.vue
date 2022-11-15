@@ -1,7 +1,7 @@
 <template>
     <div class="content-container">
         <!-- TODO icon -->
-        <v-icon x-large>
+        <v-icon large>
             {{ icon }}
         </v-icon>
         <div>
@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 .content-container {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     border: 1px solid white;
     padding: 16px;
 

@@ -1,7 +1,7 @@
 <template>
     <GenericContent
         :title="title"
-        icon="mdi-order-bool-descending"
+        icon="mdi-file-image"
     >
         <slot />
     </GenericContent>

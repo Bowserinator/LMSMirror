@@ -1,9 +1,5 @@
 export default {
     props: {
-        type: {
-            type: String,
-            default: ''
-        },
         icon: {
             type: String,
             default: 'mid-cancel'
