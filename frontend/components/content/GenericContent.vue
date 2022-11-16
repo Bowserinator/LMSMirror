@@ -27,13 +27,22 @@ export default {
 .content-container {
     display: flex;
     align-items: flex-start;
-    border: 1px solid white;
     padding: 16px;
 
     // Icon padding
     & > .v-icon {
         margin-right: 16px;
     }
+
+    // Hover
+    // TODO: don't hard code colors
+    &:hover {
+        background-color: #333;
+    }
+
+    margin-bottom: 4px;
+    transition: background-color 0.2s;
+    background-color: #1c1c1c;
 }
 
 .title {
