@@ -24,7 +24,7 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
         ],
-        headless: false, // Set to true to avoid popup
+        headless: true, // Set to true to avoid popup
     };
 
     // Firefox compat
