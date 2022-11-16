@@ -1,35 +1,50 @@
 import puppeteer from 'puppeteer-core';
-import prompt from 'password-prompt';
-import fetch from 'node-fetch';
+import getBrowser from './src/browser.js';
 
 const LMS_URL = 'https://lms.rpi.edu/';
+const TIMEOUT = 7000; // 7 seconds
 
-(async () => {
-    console.log('Warning: password input will show ur password');
-    const USERNAME = await prompt('RCSID: ');
-    const PASSWORD = await prompt('Password: ');
-    const OTP = await prompt('Duo OTP: ');
+/**
+ * Get login cookies for LMS
+ * @param {string} USERNAME Username (RCSID)
+ * @param {string} PASSWORD Password
+ * @param {string} OTP One time pass for Duo (6 digits no spaces / other)
+ * @return {string} Cookies encoded as a string of key=value;key=value,...
+ */
+export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
+    const [browserPath, browserType] = await getBrowser();
+    if (browserPath === null)
+        throw new Error('Failed to find a chrome or firefox executable!');
 
-    const browser = await puppeteer.launch({
-        // Change this to your chrome install
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
-        headless: false, // Set to true to avoid popup
+    const opts = {
+        executablePath: browserPath,
         args: [
+            '--no-sandbox', // For firefox
+            '--disable-features=VizDisplayCompositor', // For firefox
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
         ],
-        ignoreDefaultArgs: ['--disable-extensions']
-    });
+        headless: false, // Set to true to avoid popup
+    };
+
+    // Firefox compat
+    if (browserType === 'firefox')
+        opts.product = 'firefox';
+
+    const browser = await puppeteer.launch(opts);
     const page = await browser.newPage();
 
     // Block fonts, images and CSS for faster loading
-    page.setRequestInterception(true);
-    page.on('request', async request => {
-        if (['stylesheet', 'fetch', 'image', 'media', 'font'].includes(request.resourceType()))
-            request.abort();
-        else
-            request.continue();
-    });
+    // Doesn't work on firefox
+    if (browserType !== 'firefox') {
+        page.setRequestInterception(true);
+        page.on('request', async request => {
+            if (['stylesheet', 'fetch', 'image', 'media', 'font'].includes(request.resourceType()))
+                request.abort();
+            else
+                request.continue();
+        });
+    }
 
     // Go to LMS page
     await page.goto(LMS_URL, { waitUntil: 'domcontentloaded' });
@@ -49,12 +64,28 @@ const LMS_URL = 'https://lms.rpi.edu/';
         document.getElementById('password').value = PASSWORD;
         document.querySelector('.form-element.form-button').click();
     }, USERNAME, PASSWORD);
-    await page.waitForNavigation({ waitUntil: 'load' });
+
+    await page.waitForNavigation({ waitUntil: 'load', timeout: TIMEOUT });
 
     // Get Duo iframe
     let frame;
-    while (!frame) frame = (await page.frames()).find(f => f.url().includes('.duosecurity.com/'));
-    await frame.waitForNavigation();
+    let start = Date.now();
+    while (!frame && Date.now() - start < TIMEOUT)
+        frame = (await page.frames()).find(f => f.url().includes('.duosecurity.com/'));
+
+    if (!frame) {
+        browser.close();
+        throw new Error(`Unable to login (incorrect username or password)`);
+    }
+
+    try {
+        await frame.waitForNavigation({ timeout: TIMEOUT });
+    } catch(e) {
+        if (e.includes('Navigation timeout')) {
+            browser.close();
+            throw new Error(`Unable to login (incorrect Duo OTP)`);
+        }
+    }
 
     await frame.evaluate(OTP => {
         // Click enter a passcode button
@@ -74,19 +105,9 @@ const LMS_URL = 'https://lms.rpi.edu/';
 
     // Get cookies, use these in requests
     const cookies = await page.cookies();
-    console.log('Cookies:\n', cookies);
-
     await browser.close();
 
-    // Example get request
-    const response = await fetch('https://lms.rpi.edu/learn/api/public/v3/courses', {
-        headers: {
-            cookie: cookies
-                .map(c => `${c.name}=${c.value}`)
-                .join(';')
-        }
-    });
-    const data = await response.json();
-    console.log('\nData from LMS API example:');
-    console.log(data.results.map(c => '- ' + c.name).join('\n'));
-})();
+    return cookies
+        .map(c => `${c.name}=${c.value}`)
+        .join(';');
+}
