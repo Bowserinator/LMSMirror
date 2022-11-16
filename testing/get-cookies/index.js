@@ -24,7 +24,7 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
         ],
-        headless: true, // Set to true to avoid popup
+        headless: true // Set to true to avoid popup
     };
 
     // Firefox compat
@@ -79,28 +79,41 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
     }
 
     try {
-        await frame.waitForNavigation({ timeout: TIMEOUT });
+        await frame.waitForNavigation();
     } catch(e) {
-        if (e.includes('Navigation timeout')) {
+        if ((e + '').includes('Navigation timeout')) {
             browser.close();
-            throw new Error(`Unable to login (incorrect Duo OTP)`);
+            throw new Error(`Unable to login (Frame failed to load)`);
         }
     }
 
     await frame.evaluate(OTP => {
-        // Click enter a passcode button
-        [...document.getElementsByTagName('button')]
-            .filter(x => x.innerText.includes('Enter a Passcode'))[0].click();
-        // Input OTP
-        [...document.getElementsByTagName('input')]
-            .filter(x => x.name === 'passcode' && x.type === 'text')[0].value = OTP;
-        // Submit
-        [...document.getElementsByTagName('button')]
-            .filter(x => x.innerText.includes('Log In'))[0].click();
+        let interval = setInterval(() => {
+            try {
+                // Click enter a passcode button
+                [...document.getElementsByTagName('button')]
+                    .filter(x => x.innerText.includes('Enter a Passcode'))[0].click();
+                // Input OTP
+                [...document.getElementsByTagName('input')]
+                    .filter(x => x.name === 'passcode' && x.type === 'text')[0].value = OTP;
+                
+                // Click login button
+                [...document.getElementsByTagName('button')]
+                    filter(x => x.innerText.includes('Log In'))[0].click();
+                clearInterval(interval);
+            } catch(e) {}
+        }, 50);
     }, OTP);
 
     // Wait till you are in LMS
-    await page.waitForNavigation({ waitUntil: 'load' });
+    try {
+        await page.waitForNavigation({ waitUntil: 'load', timeout: TIMEOUT });
+    } catch(e) {
+        if ((e + '').includes('Navigation timeout')) {
+            browser.close();
+            throw new Error(`Unable to login (Duo code incorrect)`);
+        }
+    }
     await page.waitForFunction(`window.location.href.startsWith('https://lms.rpi.edu/')`);
 
     // Get cookies, use these in requests
