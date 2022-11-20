@@ -24,6 +24,6 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-vue": "^9.4.0",
-    "prettier": "2.7.1"
+    "prettier": "^2.7.1"
   }
 }
