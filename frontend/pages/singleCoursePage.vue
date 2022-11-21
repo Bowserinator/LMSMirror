@@ -55,7 +55,7 @@
                             </v-card>
                         </v-layout>
                         <v-layout row 12 class="mt-8">
-                            <v-card height="300" width="100%">
+                            <v-card width="100%">
                                 <v-card-title>
                                     What's New
                                 </v-card-title> 
