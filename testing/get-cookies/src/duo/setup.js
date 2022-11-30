@@ -86,7 +86,7 @@ export async function setupDuoSecret() {
                         f();
                         clearInterval(interval);
                         resolve();
-                    } catch(e) {}
+                    } catch(e) { /* Do nothing */ }
                 }, 50);
             });
         }, f);
@@ -132,17 +132,6 @@ export async function setupDuoSecret() {
         return [...document.getElementsByClassName('qr')][0].src;
     });
     console.log(url);
-
-    // Wait till you are in LMS
-    // try {
-    //     await page.waitForNavigation({ waitUntil: 'load', timeout: TIMEOUT });
-    // } catch(e) {
-    //     if ((e + '').includes('Navigation timeout')) {
-    //         browser.close();
-    //         throw new Error(`Unable to login (Duo code incorrect)`);
-    //     }
-    // }
-    // await browser.close();
 }
 
 setupDuoSecret()
