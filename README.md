@@ -1,14 +1,56 @@
 # LMSMirror
 
-## Build Setup
+LMSMirror is a free and open-source client of LMS (Blackboard).
+
+# Table of Contents
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#development-stack">Development Stack</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#development">Development</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributions">Contributions</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ol>
+</details>
+
+## Development Stack
+
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- ![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
+- ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
+
+## Getting Started
+
+### Prerequisites
+
+1. Install [NodeJS](https://nodejs.org/en/download/)
+2. Install [Git](https://git-scm.com/downloads)
+3. Clone the project
+
+```sh
+git clone https://github.com/Bowserinator/LMSMirror
+```
+
+5. Install the needed dependencies and move to the frontend folder
+
+```sh
+npm install && cd frontend
+```
+
+### Development
 
 ```bash
-# install dependencies
-npm install
-
-# Go to frontend folder
-cd frontend
-
 # serve with hot reload at localhost:3000
 npm run dev
 
@@ -18,55 +60,55 @@ npm run start
 
 # generate static project
 npm run generate
+
+# prettier formatting
+npm run pretty
+
+# prettier lint check
+npm run linting
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Contributions
 
-## Special Directories
+1. Create a branch
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+```sh
+git checkout -b branch-name
+```
 
-### `assets`
+2. Switch to the recently created branch
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+```sh
+git checkout branch-name
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+3. Change the files that are needed
+4. Add your changes to staging
 
-### `components`
+```sh
+git add .
+```
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+5. Commit your files to staging
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+```sh
+git commit -m "commit message"
+```
 
-### `layouts`
+6. Connect your branch to the repo and push up
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+```sh
+git push -u origin branch-name
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+## Roadmap
 
+Refer to our [Wiki](https://github.com/Bowserinator/LMSMirror/wiki)
 
-### `pages`
+## Resources
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+- [Vue Documentation](https://v2.vuejs.org/v2/guide/)
+- [Nuxt Documentation](https://nuxtjs.org/docs/get-started/installation)
+- [SASS Documentation](https://sass-lang.com/documentation/)
+- [Git Tutorial](https://www.atlassian.com/git/tutorials)
+- [Markdown Badges](https://dev.to/envoy_/150-badges-for-github-pnk)
