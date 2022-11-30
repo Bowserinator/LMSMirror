@@ -1,15 +1,15 @@
 <template>
     <div class="content">
         <h1>Discussion Board: XYZ</h1>
-        <v-divider class="dark my-5" color="white"></v-divider>
+        <v-divider class="dark my-5" color="white" />
         <v-card class="d-flex justify-space-between mb-6 align-center" extension extension-height="700">
-            <v-btn :ripple="false" dark class = "ma-2 pa-2" to="../create-discussion-post">
+            <v-btn :ripple="false" dark class="ma-2 pa-2" to="../create-discussion-post">
                 Create Thread
             </v-btn>
             <v-text-field
                 class="shrink search_bar pa-2" hide-details filled dense
                 single-line append-icon="mdi-magnify" label="Search" outlined
-                />
+            />
         </v-card>
         <div>
             <v-row class="px-0">
@@ -43,7 +43,7 @@
         <div class="discussion_board">
             <v-card dark class="pa-3">
                 <div v-ripple>
-                    <a href="./discussion-post">
+                    <router-link to="./discussion-post">
                         <v-row class="highlighted-thread ma-3">
                             <v-col>
                                 <h3>
@@ -71,11 +71,11 @@
                                 </h3>
                             </v-col>
                         </v-row>
-                    </a>
+                    </router-link>
                 </div>
-                <v-divider class="thread-divider"></v-divider>
+                <v-divider class="thread-divider" />
                 <div v-ripple>
-                    <a href="./discussion-post">
+                    <router-link to="/discussion-post">
                         <v-row class="highlighted-thread ma-3">
                             <v-col>
                                 <h3>
@@ -103,11 +103,11 @@
                                 </h3>
                             </v-col>
                         </v-row>
-                    </a>
+                    </router-link>
                 </div>
-                <v-divider class="thread-divider"></v-divider>
+                <v-divider class="thread-divider" />
                 <div v-ripple>
-                    <a href="./discussion-post">
+                    <router-link to="./discussion-post">
                         <v-row class="highlighted-thread ma-3">
                             <v-col>
                                 <h3>
@@ -135,11 +135,11 @@
                                 </h3>
                             </v-col>
                         </v-row>
-                    </a>
+                    </router-link>
                 </div>
-                <v-divider class="thread-divider"></v-divider>
+                <v-divider class="thread-divider" />
                 <div v-ripple>
-                    <a href="./discussion-post">
+                    <router-link to="/discussion-post">
                         <v-row class="highlighted-thread ma-3">
                             <v-col>
                                 <h3>
@@ -167,29 +167,28 @@
                                 </h3>
                             </v-col>
                         </v-row>
-                    </a>
+                    </router-link>
                 </div>
-                
             </v-card>
         </div>
     </div>
 </template>
 <script>
-    export default {
-        name: 'DiscussionBoard',
-    };
+export default {
+    name: 'DiscussionBoard'
+};
 </script>
 <style scoped>
     .discussion_board {
         width: 100%;
     }
-    
+
     .highlighted-thread:hover {
         filter: brightness(65%);
     }
 
     a {
-        text-decoration: none; 
-        color: white; 
+        text-decoration: none;
+        color: white;
     }
 </style>
