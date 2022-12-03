@@ -61,15 +61,12 @@
                 </v-layout>
             </v-container>
         </div>
-    <!-- <v-btn>Hello</v-btn> -->
-
-
     </div>
 </template>
 
 <script>
 export default {
-    name: 'IndexPage',
+    name: 'IndexPage'
 }
 </script>
 

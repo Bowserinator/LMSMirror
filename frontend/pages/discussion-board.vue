@@ -1,7 +1,7 @@
 <template>
     <div class="content">
-        <h1>Discussion Board: XYZ</h1>
-        <v-divider class="dark my-5" color="white" />
+        <PageHeader text="Discussion Board: XYZ" />
+
         <v-card class="d-flex justify-space-between mb-6 align-center" extension extension-height="700">
             <v-btn :ripple="false" dark class="ma-2 pa-2" to="../create-discussion-post">
                 Create Thread

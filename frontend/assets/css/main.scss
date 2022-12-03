@@ -1,12 +1,6 @@
-body {
-    // TODO: adjust v-main__wrap
-    background-color: hsl(210, 6%, 25%);
-}
-
-.page-header {
-    margin-bottom: 15px;
-    font-family: serif;
-    font-size: 28pt;
+// Make buttons less round
+body .v-btn {
+    border-radius: 2px;
 }
 
 // --- Start vuetify bug fixes ---- \\

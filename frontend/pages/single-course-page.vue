@@ -98,68 +98,68 @@
                 </v-flex>
                 <v-flex md6>
                     <v-card height="600">
-                    <v-card-title>
-                        To Do
-                    </v-card-title>
-                    <v-expansion-panels>
+                        <v-card-title>
+                            To Do
+                        </v-card-title>
+                        <v-expansion-panels>
 
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Past due</v-expansion-panel-header>
-                            <v-expansion-panel-content>
-                                <v-card>
-                                    <v-card-text>
-                                        <p>Lab 3</p>
-                                        <p>Homework 3</p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-header>Past due</v-expansion-panel-header>
+                                <v-expansion-panel-content>
+                                    <v-card>
+                                        <v-card-text>
+                                            <p>Lab 3</p>
+                                            <p>Homework 3</p>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
 
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Due today</v-expansion-panel-header>
-                            <v-expansion-panel-content>
-                                <v-card>
-                                    <v-card-text>
-                                        <p>Status update 6</p>
-                                        <p>Homework 6</p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Due tomorrow</v-expansion-panel-header>
-                            <v-expansion-panel-content>
-                                <v-card>
-                                    <v-card-text>
-                                        <p>Lab 7</p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Due this week</v-expansion-panel-header>
-                            <v-expansion-panel-content>
-                                <v-card>
-                                    <v-card-text>
-                                        <p>Participation 11/25</p>
-                                        <p>Case study 2</p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Due future</v-expansion-panel-header>
-                            <v-expansion-panel-content>
-                                <v-card>
-                                    <v-card-text>
-                                        <p>Final Project</p>
-                                    </v-card-text>
-                                </v-card>
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-header>Due today</v-expansion-panel-header>
+                                <v-expansion-panel-content>
+                                    <v-card>
+                                        <v-card-text>
+                                            <p>Status update 6</p>
+                                            <p>Homework 6</p>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-header>Due tomorrow</v-expansion-panel-header>
+                                <v-expansion-panel-content>
+                                    <v-card>
+                                        <v-card-text>
+                                            <p>Lab 7</p>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-header>Due this week</v-expansion-panel-header>
+                                <v-expansion-panel-content>
+                                    <v-card>
+                                        <v-card-text>
+                                            <p>Participation 11/25</p>
+                                            <p>Case study 2</p>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-header>Due future</v-expansion-panel-header>
+                                <v-expansion-panel-content>
+                                    <v-card>
+                                        <v-card-text>
+                                            <p>Final Project</p>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-expansion-panel-content>
+                            </v-expansion-panel>
 
 
-                    </v-expansion-panels>
+                        </v-expansion-panels>
                     
 
                     </v-card>
@@ -179,7 +179,7 @@
   
 <script>
 export default {
-    name: 'singleCoursePage'
+    name: 'SingleCoursePage'
 }
 </script>
 
