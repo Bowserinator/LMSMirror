@@ -6,18 +6,7 @@
             <v-btn :ripple="false" dark class="ma-2 pa-2" to="../create-discussion-post">
                 Create Thread
             </v-btn>
-            <v-text-field
-                filled
-                solo
-                flat
-                hide-details
-                single-line
-                height="56px"
-                prepend-inner-icon="mdi-magnify"
-                label="Search"
-                background-color="grey darken-3"
-                class="shrink search_bar rounded-0"
-            />
+            <BarSearchInput />
         </v-card>
         <div>
             <v-row class="px-0">

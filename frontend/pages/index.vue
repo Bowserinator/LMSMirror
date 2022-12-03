@@ -15,18 +15,7 @@
             </v-btn>
             <v-spacer />
 
-            <v-text-field
-                class="input-bar"
-                filled
-                solo
-                flat
-                hide-details
-                single-line
-                height="56px"
-                prepend-inner-icon="mdi-magnify"
-                label="Search"
-                background-color="grey darken-3"
-            />
+            <BarSearchInput />
         </v-toolbar>
 
         <h2 class="year mt-7 mb-0">Fall 2022</h2>
@@ -84,12 +73,6 @@ export default {
 // Container of all classes
 .course-list {
     width: 100%;
-}
-
-// Search bar
-.input-bar {
-    border-radius: 0 !important;
-    max-width: 300px;
 }
 
 // Year of classes listed
