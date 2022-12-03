@@ -15,7 +15,17 @@
             </v-btn>
             <v-spacer />
 
-            <BarSearchInput />
+            <v-text-field
+                filled solo flat
+                hide-details
+                single-line
+                height="56px"
+                prepend-inner-icon="mdi-magnify"
+                label="Search"
+                background-color="grey darken-3"
+                class="search_bar rounded-0"
+                style="max-width: 300px;"
+            />
         </v-toolbar>
 
         <h2 class="year mt-7 mb-0">Fall 2022</h2>

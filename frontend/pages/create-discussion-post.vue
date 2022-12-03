@@ -14,7 +14,6 @@
             <InputLabel for="input-post">Post Contents</InputLabel>
             <v-textarea
                 id="input-post"
-                height="300px"
                 outlined auto-grow solo
                 class="rounded-0"
             />

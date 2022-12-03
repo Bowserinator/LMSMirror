@@ -8,6 +8,11 @@ body .v-sheet.v-card {
     border-radius: 0;
 }
 
+// Table hover not round
+body .v-data-table > .v-data-table__wrapper tbody tr:first-child:hover td {
+    border-radius: 0 !important;
+}
+
 // --- Start vuetify bug fixes ---- \\
 
 // Remove extra left space in tabs (for button, which doesn't exist
