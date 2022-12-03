@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <div class="navbar" fixed>
         <NuxtLink to="/">
             <img class="navbar__logo" src="../assets/logo.png" alt="logo" />
         </NuxtLink>
@@ -10,15 +10,21 @@
 </template>
 
 <style lang="scss">
-$height: 69px;
+$height: 64px;
 
 .navbar {
     height: $height;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: hsl(210, 6%, 20%);
+    background-color: #1a1a1a;
     padding: 0 20px;
+    border-bottom: 1px solid #333;
+
+    // Stick to top
+    position: sticky;
+    top: 0;
+    z-index: 999;
 
     &__logo {
         height: $height;
@@ -29,17 +35,22 @@ $height: 69px;
         background-color: transparent;
         display: flex;
         line-height: 100%;
+        margin-right: 10%;
 
         &__child {
-            background-color: hsl(210, 6%, 30%);
-            border: 2px solid black;
-            padding: 10px;
-            margin-right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            align-self: center;
+            background-color: transparent;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            margin: 0;
+            transition: background-color 0.2s;
+
+            text-align: center;
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+
             width: 100px;
+            height: $height;
         }
         &__child:hover {
             background-color: hsl(210, 6%, 25%);
