@@ -18,9 +18,9 @@
     </div>
 </template>
 <script>
-  export default {
-      name: 'CreateDiscussionPost'
-  };
+export default {
+    name: 'CreateDiscussionPost'
+};
 </script>
 <style scoped>
     .discussion_buttons {
