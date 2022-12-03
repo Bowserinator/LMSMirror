@@ -24,7 +24,7 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
         ],
-        headless: false // Set to true to avoid popup
+        headless: true // Set to true to avoid popup
     };
 
     // Firefox compat
@@ -101,7 +101,7 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
                 [...document.getElementsByTagName('button')]
                     .filter(x => x.innerText.includes('Log In'))[0].click();
                 clearInterval(interval);
-            } catch(e) {}
+            } catch(e) { /* Ignore */ }
         }, 50);
     }, OTP);
 

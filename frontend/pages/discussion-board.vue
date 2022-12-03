@@ -1,194 +1,110 @@
 <template>
     <div class="content">
-        <h1>Discussion Board: XYZ</h1>
-        <v-divider class="dark my-5" color="white" />
+        <PageHeader text="Discussion Board: XYZ" />
+
         <v-card class="d-flex justify-space-between mb-6 align-center" extension extension-height="700">
-            <v-btn :ripple="false" dark class="ma-2 pa-2" to="../create-discussion-post">
+            <v-btn
+                plain depressed :ripple="false" dark
+                class="ma-2 pa-2"
+                to="../create-discussion-post"
+            >
                 Create Thread
+                <v-icon right dark>mdi-plus</v-icon>
             </v-btn>
             <v-text-field
-                class="shrink search_bar pa-2" hide-details filled dense
-                single-line append-icon="mdi-magnify" label="Search" outlined
+                v-model="search" filled solo flat
+                hide-details
+                single-line
+                height="56px"
+                prepend-inner-icon="mdi-magnify"
+                label="Search"
+                background-color="grey darken-3"
+                class="search_bar rounded-0"
+                style="max-width: 300px;"
             />
         </v-card>
+
         <div>
-            <v-row class="px-0">
-                <v-col>
-                    <h3>
-                        Thread
-                    </h3>
-                </v-col>
-                <v-col>
-                    <h3>
-                        Author
-                    </h3>
-                </v-col>
-                <v-col>
-                    <h3>
-                        Date
-                    </h3>
-                </v-col>
-                <v-col>
-                    <h3>
-                        Unread
-                    </h3>
-                </v-col>
-                <v-col>
-                    <h3>
-                        Total Comments
-                    </h3>
-                </v-col>
-            </v-row>
-        </div>
-        <div class="discussion_board">
-            <v-card dark class="pa-3">
-                <div v-ripple>
-                    <router-link to="./discussion-post">
-                        <v-row class="highlighted-thread ma-3">
-                            <v-col>
-                                <h3>
-                                    [Thread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Author]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Date]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Unread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Total Comments]
-                                </h3>
-                            </v-col>
-                        </v-row>
-                    </router-link>
-                </div>
-                <v-divider class="thread-divider" />
-                <div v-ripple>
-                    <router-link to="/discussion-post">
-                        <v-row class="highlighted-thread ma-3">
-                            <v-col>
-                                <h3>
-                                    [Thread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Author]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Date]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Unread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Total Comments]
-                                </h3>
-                            </v-col>
-                        </v-row>
-                    </router-link>
-                </div>
-                <v-divider class="thread-divider" />
-                <div v-ripple>
-                    <router-link to="./discussion-post">
-                        <v-row class="highlighted-thread ma-3">
-                            <v-col>
-                                <h3>
-                                    [Thread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Author]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Date]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Unread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Total Comments]
-                                </h3>
-                            </v-col>
-                        </v-row>
-                    </router-link>
-                </div>
-                <v-divider class="thread-divider" />
-                <div v-ripple>
-                    <router-link to="/discussion-post">
-                        <v-row class="highlighted-thread ma-3">
-                            <v-col>
-                                <h3>
-                                    [Thread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Author]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Date]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Unread]
-                                </h3>
-                            </v-col>
-                            <v-col>
-                                <h3>
-                                    [Total Comments]
-                                </h3>
-                            </v-col>
-                        </v-row>
-                    </router-link>
-                </div>
-            </v-card>
+            <v-data-table
+                hide-default-footer disable-pagination
+                fixed-header style="min-height: 400px"
+                :search="search"
+                :headers="headers"
+                :items="threads"
+                class="elevation-1 rounded-0"
+            >
+                <template #item.thread="{ item }">
+                    <nuxt-link class="thread-link" :to="`/to${item.thread}`">
+                        {{ item.thread }}
+                    </nuxt-link>
+                </template>
+            </v-data-table>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'DiscussionBoard'
+    name: 'DiscussionBoard',
+    data () {
+        return {
+            search: '',
+            headers: [
+                { text: 'Thread', value: 'thread',  },
+                { text: 'Author', value: 'author', width: '220px' },
+                { text: 'Date', value: 'date', width: '150px' },
+                { text: 'Unread', value: 'unread', width: '90px' },
+                { text: 'Total Comments', value: 'comments', width: '140px' }
+            ],
+            threads: [
+                {
+                    'thread': 'Thread Name',
+                    'author': 'John Smith',
+                    'date': 'Dec 25th 2022',
+                    'unread': 10,
+                    'comments': 10
+                },
+                {
+                    'thread': 'Thread Name',
+                    'author': 'John Smith',
+                    'date': 'Dec 25th 2022',
+                    'unread': 10,
+                    'comments': 10
+                },
+                {
+                    'thread': 'Thread Name',
+                    'author': 'John Smith',
+                    'date': 'Dec 25th 2022',
+                    'unread': 10,
+                    'comments': 10
+                },
+                {
+                    'thread': 'Thread Name',
+                    'author': 'John Smith',
+                    'date': 'Dec 25th 2022',
+                    'unread': 10,
+                    'comments': 10
+                },
+                {
+                    'thread': 'Thread Name',
+                    'author': 'John Smith',
+                    'date': 'Dec 25th 2022',
+                    'unread': 10,
+                    'comments': 10
+                }
+            ]
+        }
+    }
 };
 </script>
 <style scoped>
-    .discussion_board {
-        width: 100%;
-    }
+.thread-link {
+    text-decoration: none;
+    filter: brightness(150%);
+    width: 100%;
+    display: block;
+}
 
-    .highlighted-thread:hover {
-        filter: brightness(65%);
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
+.thread-link:hover {
+    text-decoration: underline;
+}
 </style>

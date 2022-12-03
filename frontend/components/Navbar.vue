@@ -1,49 +1,60 @@
 <template>
-  <div class="navbar">
-    <NuxtLink to="/">
-      <img class="navbar__logo" src="../assets/logo.png" alt="logo" />
-    </NuxtLink>
-    <div class="navbar__links">
-      <button class="navbar__links__child">Log In</button>
+    <div class="navbar" fixed>
+        <NuxtLink to="/">
+            <img class="navbar__logo" src="../assets/logo.png" alt="logo" />
+        </NuxtLink>
+        <div class="navbar__links">
+            <button class="navbar__links__child">Log In</button>
+        </div>
     </div>
-  </div>
 </template>
 
 <style lang="scss">
-$height: 69px;
+$height: 64px;
 
 .navbar {
-  height: $height;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: hsl(210, 6%, 20%);
-  padding: 0 20px;
-
-  &__logo {
     height: $height;
-    background-color: inherit;
-  }
-
-  &__links {
-    background-color: transparent;
+    width: 100%;
     display: flex;
-    line-height: 100%;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 0 20px;
+    border-bottom: 1px solid #333;
 
-    &__child {
-      background-color: hsl(210, 6%, 30%);
-      border: 2px solid black;
-      padding: 10px;
-      margin-right: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      align-self: center;
-      width: 100px;
+    // Stick to top
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    &__logo {
+        height: $height;
+        background-color: inherit;
     }
-    &__child:hover {
-      background-color: hsl(210, 6%, 25%);
+
+    &__links {
+        background-color: transparent;
+        display: flex;
+        line-height: 100%;
+        margin-right: 10%;
+
+        &__child {
+            background-color: transparent;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            margin: 0;
+            transition: background-color 0.2s;
+
+            text-align: center;
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            width: 100px;
+            height: $height;
+        }
+        &__child:hover {
+            background-color: hsl(210, 6%, 25%);
+        }
     }
-  }
 }
 </style>
