@@ -23,8 +23,8 @@ export default {
 };
 </script>
 <style scoped>
-    .discussion_buttons {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
+.discussion_buttons {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 </style>
