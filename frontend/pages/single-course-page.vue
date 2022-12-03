@@ -1,8 +1,6 @@
 <template>
     <div>
-
         <v-container>
-
             <v-layout row class="justify-space-between">
 
                 <v-flex sm11 md6 lg6>
@@ -17,20 +15,15 @@
                 </v-flex>
 
             </v-layout>
-
-
         </v-container>
-
 
         <v-container>
             <v-layout row wrap justify-space-between>
-
-                <v-flex xs12 md5 >
+                <!-- Left col -->
+                <v-flex xs12 md6 class="pr-2">
                     <v-container fluid>
                         <v-layout row 12>
-
-                            <v-card height="" width="100%">
-
+                            <v-card width="100%" class="pa-3">
                                 <v-card-title class="text-h5 pb-2">
                                     Announcement
                                 </v-card-title>
@@ -59,121 +52,93 @@
                                 <v-card-title>
                                     What's New
                                 </v-card-title> 
-                                <v-expansion-panels>
+                                <v-expansion-panels multiple tile accordion>
                                     <v-expansion-panel>
                                         <v-expansion-panel-header>Gradebook</v-expansion-panel-header>
                                         <v-expansion-panel-content>
-                                            <v-card>
-                                                <v-card-text>
-                                                    <p> <a>Exam 1</a> has been graded</p>
-                                                </v-card-text>
-                                            </v-card>
+                                            <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                                <p><a>Exam 1</a> has been grade</p>
+                                            </div>
                                         </v-expansion-panel-content>
                                     </v-expansion-panel>
 
                                     <v-expansion-panel>
                                         <v-expansion-panel-header>Other new content</v-expansion-panel-header>
                                         <v-expansion-panel-content>
-                                            <v-card>
-                                                <v-card-text>
-                                                    <p> <a>Lecture 15</a> has been posted</p>
-                                                    <p> <a>Homework 6 solution</a> has been posted</p>
-                                                    <p> <a>Lab 6</a> has been posted</p>
-                                                    <p> <a>Exam 2 solution</a> has been posted</p>
-                                                    <p> <a>Homework 7</a> due 11/27/2022</p>
-                                                </v-card-text>
-                                            </v-card>
+                                            <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                                <p> <a>Lecture 15</a> has been posted</p>
+                                                <p> <a>Homework 6 solution</a> has been posted</p>
+                                                <p> <a>Lab 6</a> has been posted</p>
+                                                <p> <a>Exam 2 solution</a> has been posted</p>
+                                                <p> <a>Homework 7</a> due 11/27/2022</p>
+                                            </div>
                                         </v-expansion-panel-content>
                                     </v-expansion-panel>
-
-
-
-
-
-
                                 </v-expansion-panels>
                             </v-card>
                         </v-layout>
                     </v-container>
                 </v-flex>
-                <v-flex md6>
-                    <v-card height="600">
+
+                <!-- Right col -->
+                <v-flex md6 class="pl-2">
+                    <v-card>
                         <v-card-title>
                             To Do
                         </v-card-title>
-                        <v-expansion-panels>
+                        <v-expansion-panels multiple tile accordion>
 
                             <v-expansion-panel>
                                 <v-expansion-panel-header>Past due</v-expansion-panel-header>
                                 <v-expansion-panel-content>
-                                    <v-card>
-                                        <v-card-text>
-                                            <p>Lab 3</p>
-                                            <p>Homework 3</p>
-                                        </v-card-text>
-                                    </v-card>
+                                    <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                        <p>Lab 3</p>
+                                        <p>Homework 3</p>
+                                    </div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
 
                             <v-expansion-panel>
                                 <v-expansion-panel-header>Due today</v-expansion-panel-header>
                                 <v-expansion-panel-content>
-                                    <v-card>
-                                        <v-card-text>
-                                            <p>Status update 6</p>
-                                            <p>Homework 6</p>
-                                        </v-card-text>
-                                    </v-card>
+                                    <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                        <p>Status update 6</p>
+                                        <p>Homework 6</p>
+                                    </div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
                             <v-expansion-panel>
                                 <v-expansion-panel-header>Due tomorrow</v-expansion-panel-header>
                                 <v-expansion-panel-content>
-                                    <v-card>
-                                        <v-card-text>
-                                            <p>Lab 7</p>
-                                        </v-card-text>
-                                    </v-card>
+                                    <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                        <p>Lab 7</p>
+                                    </div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
                             <v-expansion-panel>
                                 <v-expansion-panel-header>Due this week</v-expansion-panel-header>
                                 <v-expansion-panel-content>
-                                    <v-card>
-                                        <v-card-text>
-                                            <p>Participation 11/25</p>
-                                            <p>Case study 2</p>
-                                        </v-card-text>
-                                    </v-card>
+                                    <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                        <p>Participation 11/25</p>
+                                        <p>Case study 2</p>
+                                    </div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
                             <v-expansion-panel>
                                 <v-expansion-panel-header>Due future</v-expansion-panel-header>
                                 <v-expansion-panel-content>
-                                    <v-card>
-                                        <v-card-text>
-                                            <p>Final Project</p>
-                                        </v-card-text>
-                                    </v-card>
+                                    <div class="body-2 ma-0 pl-4 text--secondary panel-text">
+                                        <p>Final Project</p>
+                                    </div>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
-
-
                         </v-expansion-panels>
-                    
+
 
                     </v-card>
                 </v-flex>
-
-
             </v-layout>
-
-            
-            
-
-            
         </v-container>
-
     </div>
 </template>
   
@@ -184,12 +149,13 @@ export default {
 </script>
 
 <style scoped>
-    .announcement_text{
-        max-height: 3em;
+.panel-text > p {
+    margin: 4px 0;
+}
 
-    }
+.announcement_text{
+    max-height: 3em;
 
-
-
+}
 </style>
   

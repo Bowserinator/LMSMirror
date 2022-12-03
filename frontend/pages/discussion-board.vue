@@ -7,8 +7,16 @@
                 Create Thread
             </v-btn>
             <v-text-field
-                class="shrink search_bar pa-2" hide-details filled dense
-                single-line append-icon="mdi-magnify" label="Search" outlined
+                filled
+                solo
+                flat
+                hide-details
+                single-line
+                height="56px"
+                prepend-inner-icon="mdi-magnify"
+                label="Search"
+                background-color="grey darken-3"
+                class="shrink search_bar rounded-0"
             />
         </v-card>
         <div>
