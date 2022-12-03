@@ -39,6 +39,7 @@
                         prof="Brown"
                         code="2209_MATH 4100"
                         extra-info="lol"
+                        :grade="[6,10]"
                     />
 
                     <IndexClass
@@ -51,12 +52,14 @@
                         name="Foundations of HCI Usability"
                         prof="Kimball"
                         code="2209_COMM_4420_6420_00"
+                        :grade="[4,10]"
                     />
 
                     <IndexClass
                         name="Web Systems Development"
                         prof="Callahan"
                         code="2209_ITWS 2110"
+                        :grade="[9,10]"
                     />
                 </v-layout>
             </v-container>

@@ -2,6 +2,7 @@
     <v-card dark width="100%" class="pa-4 course-card">
         <div class="info-text">
             {{ code }}
+            <GradeBadge style="float: right" :grade="grade[0]" :total="grade[1]" />
         </div>
 
         <div class="name-row">
@@ -75,6 +76,10 @@ export default {
         extraInfo: {
             type: String,
             default: ''
+        },
+        grade: {
+            type: typeof [0, 0],
+            default: [undefined, 0]
         }
     },
     data () {
