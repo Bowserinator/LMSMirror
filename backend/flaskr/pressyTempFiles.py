@@ -16,22 +16,14 @@ cookies = 'BbRouter=expires:1670403683,id:83FC0394BCAC122490027A4E5DDD6602,signa
 # Temporary code location for API_wrapper functions Preston writes
 # to avoid any git issues
 
-# Grabs user's course ID's
-# !!!!! Requires that LMS is logged into already
+/learn/api/public/v1/courses/{courseId}/contents
 
 
 def authenticate(RCSID):
 
-    # !!!!! IT SEEMS NIKO AND I ARE WORKING ON THE EXACT SAME THING
-    # !!!!! A coversation may be in order...
-
-    # https://lms.rpi.edu
-    # /learn/api/public/v1/oauth2/authorizationcode
-    # /learn/api/public/v1/oauth2/token
-    # /learn/api/public/v1/oauth2/tokeninfo
-
-    # Bowser's Duo passer give us cookie for 24 hour log in
-    # Could be another way to do this
+    # This needs to grab the content from the cookie.txt file
+    # and set cookies = to it
+    # Doing that is pointless until the node.js script writes to the file...
 
     raise Exception("Function not finished")
 
@@ -44,8 +36,6 @@ def getCourseIDs(RCSID):
 
     page = requests.get(url, headers={"cookie": cookies})
 
-    # may have to use flask here to authenticate after all...
-
     print(page.text)
 
     # will neeed to convert to json probably
@@ -55,6 +45,22 @@ def getCourseIDs(RCSID):
     raise Exception("Function not finished")
 
 
+def getContent(courseID):
+
+    raise Exception("Function not finished")
+
+
+def getGrades(courseID):
+
+    raise Exception("Function not finished")
+
+
+def getAnnouncements(courseID):
+
+    raise Exception("Function not finished")
+
+
 if __name__ == '__main__':  # personal testing code
 
-    getCourseIDs("waterp2")
+    # getCourseIDs("waterp2")
+    getContent("_13416_1")
