@@ -101,6 +101,12 @@ git commit -m "commit message"
 git push -u origin branch-name
 ```
 
+7. Update your local repository with current remote repository
+
+```sh
+git pull
+```
+
 ## Roadmap
 
 Refer to our [Wiki](https://github.com/Bowserinator/LMSMirror/wiki)
