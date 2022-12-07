@@ -1,7 +1,8 @@
 import puppeteer from 'puppeteer-core';
 import getBrowser from './src/browser.js';
+import { LMS_URL } from '../config.js';
+import { cookieObjToStr } from './cookies.js';
 
-const LMS_URL = 'https://lms.rpi.edu/';
 const TIMEOUT = 7000; // 7 seconds
 
 /**
@@ -24,7 +25,7 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
         ],
-        headless: true // Set to true to avoid popup
+        headless: false // Set to true to avoid popup
     };
 
     // Firefox compat
@@ -39,7 +40,7 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
     if (browserType !== 'firefox') {
         page.setRequestInterception(true);
         page.on('request', async request => {
-            if (['stylesheet', 'fetch', 'image', 'media', 'font'].includes(request.resourceType()))
+            if (['stylesheet', 'image', 'media', 'font'].includes(request.resourceType()))
                 request.abort();
             else
                 request.continue();
@@ -116,11 +117,17 @@ export async function getLoginCookies(USERNAME, PASSWORD, OTP) {
     }
     await page.waitForFunction(`window.location.href.startsWith('https://lms.rpi.edu/')`);
 
-    // Get cookies, use these in requests
-    const cookies = await page.cookies();
+    // Wait for cookie authorization
+    // We can't use request redirection as it doesn't work on firefox
+    let cookies = [];
+    start = Date.now();
+
+    while (Date.now() - start < 15000 && !cookies.some(c => c.value.includes('xsrf'))) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+        cookies = await page.cookies();
+    }
+
     await browser.close();
 
-    return cookies
-        .map(c => `${c.name}=${c.value}`)
-        .join(';');
+    return cookieObjToStr(cookies);
 }

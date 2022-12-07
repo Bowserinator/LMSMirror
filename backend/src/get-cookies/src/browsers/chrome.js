@@ -2,18 +2,25 @@ import { execSync as exec } from 'child_process';
 import { testAll, getWinPathDefault, getLinuxPathDefault } from '../util.js';
 import userhome from 'userhome';
 
+/**
+ * @return {string | null} Path to executable
+ */
 export default async function() {
-    if (process.platform === 'darwin') {
+    if (process.platform === 'darwin') 
         return await getOSXPath();
-    } else if (process.platform === 'win32') {
+    else if (process.platform === 'win32') 
         return await getWinPathDefault('\\Google\\Chrome\\Application\\chrome.exe');
-    } else {
+    else 
         return await getLinuxPathDefault('google-chrome');
-    }
+    
 }
 
+/**
+ * @return {string | null} Path to executable on MacOS
+ */
 async function getOSXPath() {
     const toExec = '/Contents/MacOS/Google Chrome';
+    const regPath = '/Applications/Google Chrome.app' + toExec;
     return await testAll([
         '/Applications/Google Chrome.app' + toExec,
         userhome(regPath.slice(1)),

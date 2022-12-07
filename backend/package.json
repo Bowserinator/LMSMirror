@@ -1,20 +1,20 @@
 {
-  "name": "api-example",
+  "name": "lms-mirror-backend",
   "version": "1.0.0",
-  "description": "LMSMiror sample API getting",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Bowserinator",
+  "author": "",
   "license": "MIT",
   "dependencies": {
-    "locate-chrome": "^0.1.1",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^3.3.0",
     "password-prompt": "^1.1.2",
     "puppeteer": "^18.0.4",
     "puppeteer-core": "^18.0.4",
-    "userhome": "^1.0.0"
+    "userhome": "^1.0.0",
+    "express-api-server": "^0.0.8"
   }
 }

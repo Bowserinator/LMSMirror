@@ -10,12 +10,12 @@ const OTP = await prompt('Duo OTP: ');
 
 const cookies = await getLoginCookies(USERNAME, PASSWORD, OTP);
 
-console.log(cookies)
+console.log(cookies);
 
 // Example get request
-const response = await fetch('https://lms.rpi.edu/learn/api/public/v3/courses', {
-    headers: { cookie: cookies }
-});
-const data = await response.json();
-console.log('\nData from LMS API example:');
-console.log(data.results.map(c => '- ' + c.name).join('\n'));
+// const response = await fetch('https://lms.rpi.edu/learn/api/public/v3/courses', {
+//     headers: { cookie: cookies }
+// });
+// const data = await response.json();
+// console.log('\nData from LMS API example:');
+// console.log(data.results.map(c => '- ' + c.name).join('\n'));

@@ -1,0 +1,20 @@
+API definition
+
+Homepage
+- Get all classes + grades
+
+api seperate into:
+/get/ - get without updating
+/get file system/
+
+/update/ - update and then get - have cooldown?
+
+Get grades:
+https://lms.rpi.edu/learn/api/public/v1/courses/_13595_1/gradebook/columns
+https://lms.rpi.edu/learn/api/public/v1/courses/_13595_1/gradebook/schemas
+https://lms.rpi.edu/learn/api/public/v1/courses/_13595_1/gradebook/users/userName:[RCSID]
+
+Course announcements (all):
+POST https://lms.rpi.edu/learn/api/v1/streams/ultra
+
+detect when cookies expire

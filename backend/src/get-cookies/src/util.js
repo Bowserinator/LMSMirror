@@ -5,7 +5,7 @@ import { execSync as exec } from 'child_process';
  * Test possible browser locations
  * @param {Array<Function | string>} arr Path, or function to exec that returns a path
  *                                       where the browser may exist 
- * @return Path to browser or null if none exist
+ * @return {string | null} Path to browser or null if none exist
  */
 export async function testAll(arr) {
     for (let test of arr) {
@@ -23,7 +23,7 @@ export async function testAll(arr) {
 /**
  * Default windows path test
  * @param {string} winSuffix Suffix for path in AppData or ProgramFiles, ie \\Mozilla Firefox\\firefox.exe
- * @return Path to browser if it exists or null otherwise
+ * @return {string | null} Path to browser if it exists or null otherwise
  */
 export async function getWinPathDefault(winSuffix) {
     const prefixes = [
@@ -42,7 +42,7 @@ export async function getWinPathDefault(winSuffix) {
 /**
  * Default linux path test
  * @param {string} programName name to pass into the which command
- * @return Path to browser if it exists or null otherwise
+ * @return {string | null} Path to browser if it exists or null otherwise
  */
 export async function getLinuxPathDefault(programName) {
     try { return exec('which ' + programName).trim(); }

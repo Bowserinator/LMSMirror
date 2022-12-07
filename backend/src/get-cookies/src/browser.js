@@ -9,7 +9,7 @@ import locateEdge from './browsers/edge.js';
 
 /**
  * Get path to a valid browser for puppeteer
- * @return [path to browser, browser type = 'chrome | firefox']
+ * @return {Array} [path to browser, browser type = 'chrome | firefox']
  */
 export default async function getBrowser() {
     // Prefer chromium based browsers due to better puppeteer compat

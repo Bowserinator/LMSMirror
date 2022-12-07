@@ -134,4 +134,4 @@ export async function setupDuoSecret() {
     console.log(url);
 }
 
-setupDuoSecret()
+setupDuoSecret();

@@ -1,5 +1,8 @@
 import { testAll } from '../util.js';
 
+/**
+ * @return {string | null} Path to executable
+ */
 export default async function() {
     // We only care about the chromium version of edge which only
     // exists at this path:
