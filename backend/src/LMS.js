@@ -32,29 +32,32 @@ class LMS extends Syncable {
             'flushCache': false
         };
 
+        let courses = [];
+        let announcements = [];
+
         // First request gets providers and preps for 2nd
-        let [newCookie, temp] = await postAPIRequest('learn/api/v1/streams/ultra',
+        let [newCookie, data] = await postAPIRequest('learn/api/v1/streams/ultra',
             this.cookies, PRIVATE_POST_BODY, PRIVATE_API_HEADERS);
         let tempProviders = {};
-        for (let key of temp['sv_providers'])
+        for (let key of data['sv_providers'])
             tempProviders[key['sp_provider']] = key;
 
         // Update parameters and update cookie
         // Both are necessary!
         PRIVATE_POST_BODY.retrieveOnly = true;
         PRIVATE_POST_BODY.providers = tempProviders;
-        this.cookies = mergeCookieStr(this.cookies, newCookie)
+        this.cookies = mergeCookieStr(this.cookies, newCookie);
 
-        // Get all the data now
-        let data;
-        [newCookie, data] = await postAPIRequest('learn/api/v1/streams/ultra',
-            this.cookies, PRIVATE_POST_BODY, PRIVATE_API_HEADERS);
+        while (data['sv_moreData']) {
+            // Get all the data now
+            [newCookie, data] = await postAPIRequest('learn/api/v1/streams/ultra',
+                this.cookies, PRIVATE_POST_BODY, PRIVATE_API_HEADERS);
+            this.cookies = mergeCookieStr(this.cookies, newCookie);
+        }
 
         // Extract useful info from this big JSON
-        const courses = data['sv_extras']['sx_courses'];
-        const announcements = data['sv_streamEntries'];
-
-        console.log(courses)
+        courses = courses.concat(data['sv_extras']['sx_courses']);
+        announcements = announcements.concat(data['sv_streamEntries']);
     }
 
     from(data) {

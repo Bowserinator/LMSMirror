@@ -14,10 +14,14 @@ export function cookieStrToObj(str) {
 
 /**
  * Convert cookie obj to string
- * @param {object} obj Cookie object {key: val}
+ * @param {array | object} obj Cookie object [{name: '', value: ''},... or {key: val}
  * @return {string} Cookie string key=val;key2=val2
  */
 export function cookieObjToStr(obj) {
+    if (!Array.isArray(obj)) {
+        let keys = Object.keys(obj);
+        obj = keys.map(x => { return { name: x, value: obj[x] }; })
+    }
     return obj
         .map(c => `${c.name}=${c.value}`)
         .join(';');

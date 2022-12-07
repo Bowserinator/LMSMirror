@@ -3,6 +3,10 @@ API definition
 Homepage
 - Get all classes + grades
 
+repeat all requests until everything is obtained?
+
+
+
 api seperate into:
 /get/ - get without updating
 /get file system/
