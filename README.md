@@ -116,7 +116,6 @@ Refer to our [Wiki](https://github.com/Bowserinator/LMSMirror/wiki)
 - [Vue Documentation](https://v2.vuejs.org/v2/guide/)
 - [Nuxt Documentation](https://nuxtjs.org/docs/get-started/installation)
 - [SASS Documentation](https://sass-lang.com/documentation/)
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 - [Git Tutorial](https://www.atlassian.com/git/tutorials)
 - [Markdown Badges](https://dev.to/envoy_/150-badges-for-github-pnk)
 
